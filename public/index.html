@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="/bower_components/font-awesome/css/font-awesome.min.css">
   <link rel="stylesheet" href="/bower_components/devicons/css/devicons.min.css">
+  <link rel="stylesheet" href="/angular-material/angular-material.css" media="screen" title="no title" charset="utf-8">
 
   <!-- bootstrap/jQuery -->
   <script src="/bower_components/jquery/dist/jquery.min.js"></script>
@@ -20,10 +21,13 @@
 
   <!-- Angular -->
   <script src="/bower_components/angular/angular.min.js"></script>
-  <script src="/bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
-  <script src="/bower_components/angular-aria/angular-aria.js"></script>
   <script src="/bower_components/angular-animate/angular-animate.js"></script>
-  <script src="/bower_components/angular-material/angular-material.js"></script>
+  <script src="/bower_components/angular-aria/angular-aria.js"></script>
+  <script src="/angular-material/angular-material.js"></script>
+  <script src="/bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+
+  <!-- SVGS FOR ANGULAR MATERIAL -->
+  <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-114/svg-assets-cache.js" charset="utf-8"></script>
 
   <!-- google maps -->
   <script src="/bower_components/ngmap/build/scripts/ng-map.min.js"></script>
@@ -33,10 +37,16 @@
   <script src="/js/module/module.js"></script>
 
   <!-- controllers -->
-  <script src="/js/controllers/landingController.js"></script>
+  <script src="/js/controllers/navController.js"></script>
+  <script src="/js/controllers/aboutController.js"></script>
+  <script src="/js/controllers/homeController.js"></script>
+  <script src="/js/controllers/mapController.js"></script>
 
   <!-- directives -->
-  <script src="/js/directives/landingDirective.js"></script>
+  <script src="/js/directives/navDirective.js"></script>
+  <script src="/js/directives/aboutDirective.js"></script>
+  <script src="/js/directives/homeDirective.js"></script>
+  <script src="/js/directives/mapDirective.js"></script>
 
   <!-- service -->
   <script src="/js/services/authService.js"></script>
@@ -51,6 +61,13 @@
 </head>
 
 <body>
+
+  <nav-directive></nav-directive>
+
   <div ui-view></div>
+  
+  <map-directive></map-directive>
+
+
 </body>
 </html>

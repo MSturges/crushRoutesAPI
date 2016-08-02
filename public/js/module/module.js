@@ -4,9 +4,22 @@
   var dependencies = [
     'ui.router',
     'ngMap',
-    'ngMaterial'
+    'ngMaterial',
+    'ngAria',
+    'ngAnimate',
+    'material.svgAssetsCache'
+
   ]
 
   angular.module('crushingRoutes', dependencies)
+
+  .run(['$rootScope', function($rootScope) {
+    $rootScope.$on("$stateChangeSuccess", function(event, toState, toParams, fromState, fromParams) {
+      $rootScope.currentNavItem = toState.name;
+
+
+      
+    });
+  }])
 
 }())

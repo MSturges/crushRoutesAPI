@@ -17,9 +17,14 @@
     // $httpProvider.interceptors.push("TokenInterceptor");
 
     $stateProvider
-    .state('landing', {
+    .state('home', {
       url: "/",
-      template: "<landing-directive></landing-directive>"
+      template: "<home-directive></home-directive>"
+    })
+
+    .state('about', {
+      url: "/about",
+      template: "<about-directive></about-directive>"
     })
 
     $locationProvider.html5Mode(true)
