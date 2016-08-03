@@ -3,21 +3,22 @@
   <ng-map default-style="false" center="40.0150, -105.2705" zoom="11">
 
 
-    <div ng-repeat="m in markers">
 
-      <marker position="{{m.pos}}" on-click="map.showInfoWindow(event, {{m.id}})">
+
+      <marker ng-repeat="m in markers" position="{{m.pos}}" on-click="map.showInfoWindow(event, {{m.id}})">
       </marker>
 
-      <info-window id="{{m.id}}" max-width="200">
+
+
+      <info-window ng-repeat"i in infoWindow" id="{{i.id}}" max-width="200">
         <div ng-non-bindable>
-          <h1 class="info_heading">{{m.infoHead}}</h1>
+          <h1 class="info_heading">{{i.infoHead}}</h1>
           <div id="info_Content">
-            <p>{{m.infoContent}}</p>
+            <p>{{i.infoContent}}</p>
           </div>
         </div>
       </info-window>
 
-    </div>
 
 
   </ng-map>
