@@ -1,4 +1,14 @@
 ng-map {
-  height: 600px;
-  width: 100% content-box;
+  height: 500px;
+  margin: 25px auto;
+}
+
+#mapContainer {
+  background: rgba(29,31,33, .4) !important;
+  width: 75%;
+  // margin: 0 100px 0 100px;
+  margin: 0 auto;
+
+
+  text-align: center;
 }

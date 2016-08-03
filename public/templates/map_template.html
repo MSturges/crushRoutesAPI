@@ -1,5 +1,25 @@
-<div ng-if='checkRoute()' map-lazy-load="https://maps.google.com/maps/api/js">
+<div id="mapContainer" ng-if='checkRoute()' map-lazy-load="https://maps.google.com/maps/api/js">
 
-  <ng-map center="40.0150, -105.2705" zoom="11"></ng-map>
+  <ng-map default-style="false" center="40.0150, -105.2705" zoom="11">
+
+
+    <div ng-repeat="m in markers">
+
+      <marker position="{{m.pos}}" on-click="map.showInfoWindow(event, {{m.id}})">
+      </marker>
+
+      <info-window id="{{m.id}}" max-width="200">
+        <div ng-non-bindable>
+          <h1 class="info_heading">{{m.infoHead}}</h1>
+          <div id="info_Content">
+            <p>{{m.infoContent}}</p>
+          </div>
+        </div>
+      </info-window>
+
+    </div>
+
+
+  </ng-map>
 
 </div>
