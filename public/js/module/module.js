@@ -3,12 +3,11 @@
 
   var dependencies = [
     'ui.router',
-    'ngMap',
     'ngMaterial',
     'ngAria',
     'ngAnimate',
-    'material.svgAssetsCache'
-
+    'material.svgAssetsCache',
+    'leaflet-directive'
   ]
 
   angular.module('crushingRoutes', dependencies)
@@ -18,7 +17,7 @@
       $rootScope.currentNavItem = toState.name;
 
 
-      
+
     });
   }])
 

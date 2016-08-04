@@ -1,26 +1,16 @@
 <div id="mapContainer" ng-if='checkRoute()' map-lazy-load="https://maps.google.com/maps/api/js">
+  <leaflet defaults='defaults' markers="markers" center="boulder" width="100%" height="480px"></leaflet>
 
-  <ng-map default-style="false" center="40.0150, -105.2705" zoom="11">
-
-
-
-
-      <marker ng-repeat="m in markers" position="{{m.pos}}" on-click="map.showInfoWindow(event, {{m.id}})">
-      </marker>
+  <div layout="row">
 
 
-
-      <info-window ng-repeat"i in infoWindow" id="{{i.id}}" max-width="200">
-        <div ng-non-bindable>
-          <h1 class="info_heading">{{i.infoHead}}</h1>
-          <div id="info_Content">
-            <p>{{i.infoContent}}</p>
-          </div>
-        </div>
-      </info-window>
+    <ul layout-align="center start">
+      <li><input type="number" step="any" ng-model="boulder.lat" /> Latitude</li>
+      <li><input type="number" step="any" ng-model="boulder.lng" /> Longitude</li>
+      <li><input type="number" step="any" ng-model="boulder.zoom" /> Zoom</li>
+    </ul>
 
 
-
-  </ng-map>
+  </div>
 
 </div>

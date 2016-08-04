@@ -7,13 +7,43 @@
   MapController.$inject = [
     '$log',
     '$scope',
-    'NgMap',
-    '$rootScope'
+    '$rootScope',
+    'MapService',
+    '$state'
   ]
 
-  function MapController ($log, $scope, NgMap, $rootScope) {
-    $scope.showMap = false;
+  function MapController ($log, $scope, $rootScope, MapService, $state) {
+    angular.extend($scope, {
+      defaults: {
+        zoomControl: false
+      },
+      boulder: {
+        lat: 40.015,
+        lng: -105.27,
+        zoom: 13
+      },
+    });
 
+
+    MapService.getMarkers()
+    .then(function(markers){
+      $log.info('routes!!!!!', markers);
+      $scope.markers = markers;
+    })
+    .catch(function(err){
+      $log.error('no pirates :(', err);
+    })
+
+    
+
+
+
+
+
+
+
+
+    $scope.showMap = false;
     $scope.checkRoute = function() {
       if ($rootScope.currentNavItem === 'home') {
         $scope.showMap = true;
@@ -23,28 +53,7 @@
       return $scope.showMap
     }
 
-    // $scope.markers = [
-    //   {pos: [40.0150, -105.2705], id:1},
-    //   {pos: [40.0260, -105.2805], id:2},
-    //   {pos: [40.0370, -105.2905], id:3},
-    //   {pos: [40.0483, -105.3005], id:4},
-    //   {pos: [40.0594, -105.3105], id:5}
-    // ]
-    //
-    // $scope.infoWindow = [
-    //   {infoHead: 'i\m a header1', infoContent: 'I\m content1', id:1},
-    //   {infoHead: 'i\m a header2', infoContent: 'I\m content2', id:2},
-    //   {infoHead: 'i\m a header3', infoContent: 'I\m content3', id:3},
-    //   {infoHead: 'i\m a header4', infoContent: 'I\m content4', id:4},
-    //   {infoHead: 'i\m a header5', infoContent: 'I\m content5', id:5},
-    // ]
-    //
-    //
-    //
-    // //  $scope.currentNavItem = 'home';
-    // NgMap.getMap().then(function(map) {
-    // });
+
 
   }
-
 }())

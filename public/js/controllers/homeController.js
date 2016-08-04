@@ -6,19 +6,10 @@
 
  HomeController.$inject = [
    '$log',
-   '$scope',
-   'NgMap'
+   '$scope'
  ]
 
- function HomeController ($log, $scope, NgMap) {
-
-
-
-  //  $scope.currentNavItem = 'home';
-
-   NgMap.getMap().then(function(map) {
-   });
-
+ function HomeController ($log, $scope) {
  }
 
 }())

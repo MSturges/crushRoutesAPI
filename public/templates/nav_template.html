@@ -3,7 +3,43 @@
   <md-nav-bar md-selected-nav-item="currentNavItem" nav-bar-aria-label="navigation links">
     <md-nav-item md-nav-sref="home" name="home">Home</md-nav-item>
     <md-nav-item md-nav-sref="about" name="about">About</md-nav-item>
-    <md-nav-item md-nav-sref="loging" name="login">Login</md-nav-item>
-    <md-nav-item md-nav-sref="loging" name="sign up">Sign Up</md-nav-item>
+    <md-nav-item md-nav-click="loging" name="login">Login</md-nav-item>
+    <md-nav-item md-nav-click="signup" name="sign up">Sign Up</md-nav-item>
+    <md-nav-item md-nav-click="toggleSideNavBar()" name="togglesidenav">toggle side nav</md-nav-item>
   </md-nav-bar>
 </md-content>
+
+<md-sidenav class="md-sidenav-left" md-component-id="left"  md-whiteframe="4">
+
+  <md-toolbar class="md-theme-indigo">
+    <h1 class="md-toolbar-tools">Sidenav Left</h1>
+  </md-toolbar>
+
+  <md-button ng-click="close()" class="md-primary">
+    Close Sidenav Left
+  </md-button>
+
+  <md-content layout-padding="">
+
+
+    <h1>Add climb</h1>
+    <form ng-submit='addMarker()' novalidate name='firstForm'>
+      <label for="group">climbing area: </label>
+      <input type="text" name="group" ng-model='values.group' required><br>
+
+      <label for="lat">Latitude: </label>
+      <input type="text" name="latitude" ng-model='values.lat' required><br>
+
+      <label for="lng">longitude: </label>
+      <input type="text" name="acessory" ng-model='values.lng' required><br>
+
+      <label for="message">message: </label>
+      <input type="text" name="message" ng-model='values.message' required><br>
+
+      <hr>
+      <input class="btn btn-success" ng-disabled="firstForm.$invalid" type="submit" value="Add your Pirate">
+      <hr>
+    </form>
+
+  </md-content>
+</md-sidenav>
