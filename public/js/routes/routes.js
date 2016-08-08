@@ -27,6 +27,16 @@
       template: "<about-directive></about-directive>"
     })
 
+    .state('signup', {
+      url: "/signup",
+      template: "<signup-directive></signup-directive>"
+    })
+    
+    .state('login', {
+      url: "/login",
+      template: "<login-directive></login-directive>"
+    })
+
     $locationProvider.html5Mode(true)
     $urlRouterProvider.otherwise("/")
 

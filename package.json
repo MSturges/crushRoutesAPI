@@ -16,6 +16,7 @@
     "gulp": "^3.9.1",
     "gulp-nodemon": "^2.1.0",
     "gulp-sass": "^2.3.2",
+    "jsonwebtoken": "^7.1.7",
     "knex": "^0.11.7",
     "morgan": "~1.6.1",
     "pg": "^6.0.2",

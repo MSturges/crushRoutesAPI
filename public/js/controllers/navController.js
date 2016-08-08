@@ -15,7 +15,16 @@
   ]
 
   function NavController ($log, $scope, $rootScope, $state, $timeout, $mdSidenav, MapService) {
+
     $scope.currentNavItem = $rootScope.currentNavItem;
+    $scope.values = {};
+
+    $rootScope.$on('populateAndOpenSideNav', function(event, leafEvent) {
+      $scope.toggleSideNavBar();
+      $scope.values.lat = leafEvent.latlng.lat;
+      $scope.values.lng = leafEvent.latlng.lng;
+    });
+
 
     $scope.toggleSideNavBar = function(){
       if ($scope.isOpenLeft()) {
@@ -24,7 +33,6 @@
         $scope.open();
       }
     }
-
     $scope.isOpenLeft = function(){
       return $mdSidenav('left').isOpen();
     }
@@ -33,7 +41,7 @@
       // Component lookup should always be available since we are not using `ng-if`
       $mdSidenav('left').close()
       .then(function () {
-        $log.debug("close LEFT is done");
+        $rootScope.$broadcast('redrawMarkers');
       });
     };
 
@@ -50,14 +58,18 @@
       MapService.addMarker($scope.values)
       .then(function(success){
         $log.info(success);
-        $scope.values = null;
-        // $state.go('/');
+        $scope.values = {};
+        $scope.close();
       })
       .catch(function(err){
         $log.error(err);
       })
     }
 
-  }
+    $scope.$on("leafletDirectiveMap.focus", function(event, args){
+      $rootScope.$broadcast('redrawMarkers');
+    });
 
+
+  }
 }())

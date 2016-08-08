@@ -17,7 +17,6 @@
       var deferred = $q.defer();
       $http.get('/allmarkers')
       .then(function(pirates){
-        console.log('pirates in service!', pirates);
         deferred.resolve(pirates.data);
       })
       .catch(function(err){
