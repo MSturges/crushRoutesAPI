@@ -7,7 +7,8 @@
     'ngAria',
     'ngAnimate',
     'material.svgAssetsCache',
-    'leaflet-directive'
+    'leaflet-directive',
+    'ngMessages'
   ]
 
   angular.module('crushingRoutes', dependencies)

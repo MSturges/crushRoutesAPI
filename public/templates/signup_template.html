@@ -1,19 +1,39 @@
-<h1>signup!!!!!!!!!!!!!</h1>
+<div id="signupForm" layout="column" layout-align="center center" layout="column" ng-cloak="" class="inputdemoErrors">
 
-<form ng-submit="createUser()">
+  <md-content layout-padding="">
+    <form name="signupForm" ng-submit="createUser()()">
 
-  <p>
-    Name
-    <input type="text" ng-model="user.user_name">
-  </p>
+      <md-input-container class="md-block">
+        <label>User Name</label>
 
-  <p>
-    Password
-    <input type="password" ng-model="user.password">
-  </p>
+        <input type="text" required="" name="userName" ng-minlength="6" ng-maxlength="26" ng-model="user.user_name">
 
-  <p>
-    <input type="submit">
-  </p>
+        <div ng-messages="signupForm.userName.$error">
+          <div ng-message="required">User Name Required</div>
+          <div ng-message="minlength">Your field is too short</div>
+          <div ng-message="maxlength">Your field is too long test</div>
+        </div>
 
-</form>
+      </md-input-container>
+
+      <md-input-container>
+        <label>Password</label>
+        <input type="password" required="" name="password" ng-minlength="6" ng-maxlength="26" ng-model="user.password">
+
+        <div ng-messages="signupForm.password.$error">
+          <div ng-message="required">Password Required</div>
+          <div ng-message="minlength">Your field is too short</div>
+          <div ng-message="maxlength">Your field is too long test</div>
+        </div>
+
+      </md-input-container>
+
+
+      <p>
+        <input type="submit">
+      </p>
+
+    </form>
+  </md-content>
+
+</div>

@@ -8,10 +8,11 @@
     '$log',
     '$scope',
     'SignupService',
-    '$state'
+    '$state',
+    'LoginService'
   ]
 
-  function SignupController ($log, $scope, SignupService, $state) {
+  function SignupController ($log, $scope, SignupService, $state, LoginService) {
 
     $scope.createUser = function () {
       $log.info('user: ', $scope.user)
