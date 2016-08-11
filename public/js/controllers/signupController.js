@@ -25,6 +25,12 @@
       })
     }
 
+    $scope.checkValidity = function(validity) {
+      return validity ? 'Please Complete Form' : 'Sign Up';
+    }
+
+
+
   }
 
 }())

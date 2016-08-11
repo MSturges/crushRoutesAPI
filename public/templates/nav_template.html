@@ -10,28 +10,32 @@
 
 <md-sidenav class="md-sidenav-left" md-component-id="left"  md-whiteframe="4">
 
-  <md-toolbar layout="row" class="md-theme-indigo">
+  <md-toolbar id="sideNavTool" layout="row" class="md-theme-indigo">
     <h1 layout-align="start center" class="md-toolbar-tools">Add Your Route!</h1>
-    <md-button layout-align="start end" class="md-fab" aria-label="Settings" ng-click="close()">
-      <md-icon md-svg-icon="img/icons/menu.svg"></md-icon>
+    <md-button layout-align="start end" class="md-warn" aria-label="Settings" ng-click="close()">
+      <md-icon  md-svg-icon="img/icons/menu.svg"></md-icon>
     </md-button>
   </md-toolbar>
 
-  <md-content layout-padding="">
+  <md-content  layout-padding="">
+
     <form name='addClimbForm' ng-submit='addMarker()' novalidate>
+
       <md-input-container class="md-block">
         <label for="climbing_area">Climbing Area: </label>
-        <input type="text" name="climbing_area" ng-model='values.climbing_area' required><br>
+        <input type="text" name="climbing_area" ng-model='values.climbing_area'ng-maxlength="30" required><br>
         <div ng-messages="addClimbForm.climbing_area.$error">
           <div ng-message="required">Climbing area required!</div>
+          <div ng-message="maxlength">Climbing Area must be less than 30 characters</div>
         </div>
       </md-input-container>
 
       <md-input-container class="md-block">
         <label for="route_name">Route Name: </label>
-        <input type="text" name="route_name" ng-model='values.route_name' required><br>
+        <input type="text" name="route_name" ng-model='values.route_name' ng-maxlength="30" required><br>
         <div ng-messages="addClimbForm.route_name.$error">
           <div ng-message="required">Route name required!</div>
+          <div ng-message="maxlength">Route name must be less than 30 characters</div>
         </div>
       </md-input-container>
 
@@ -40,15 +44,16 @@
         <input type="text" name="picture_url" ng-model='values.picture_url'><br>
       </md-input-container>
 
-      <md-input-container class="md-block">
+      <md-input-container id="description"class="md-block">
         <label for="description">description: </label>
-        <input type="text" name="description" ng-model='values.description' required>
+        <input type="text" name="description" ng-model='values.description' ng-maxlength="50" required>
         <div ng-messages="addClimbForm.description.$error">
           <div ng-message="required">description required!</div>
+          <div ng-message="maxlength">Description must be less than 50 characters</div>
         </div>
       </md-input-container><br>
 
-      <md-input-container>
+      <md-input-container class="dropDownSelect">
         <label>Type</label>
         <md-select ng-model="values.climb_type">
           <md-option ng-repeat="type in types" ng-click='updateGrades(type.abbrev)' value="{{type.abbrev}}" >
@@ -57,7 +62,7 @@
         </md-select>
       </md-input-container>
 
-      <md-input-container >
+      <md-input-container class="dropDownSelect" >
         <label>Grade</label>
         <md-select ng-model="values.climb_grade">
           <md-option ng-repeat="grade in grades" value="{{grade.abbrev}}">
@@ -76,17 +81,16 @@
 
       <md-input-container class="md-block">
         <label for="lng">Longitude: </label>
-        <input type="text" name="Longitude" ng-model='values.lng' required><br>
+        <input type="text" name="Longitude" ng-model='values.lng' required>
         <div ng-messages="addClimbForm.Longitude.$error">
           <div ng-message="required">Longitude required!</div>
         </div>
       </md-input-container>
 
-      <hr>
-      <!-- <input class="btn btn-success" ng-disabled="addClimbForm.$invalid" type="submit" value="Add Your Route" class="md-block"> -->
-      <md-button class="md-raised md-primary" ng-disabled="addClimbForm.$invalid" type="submit"><span ng-bind='checkValidity(addClimbForm.$invalid)'></span></md-button>
-      <hr>
+      <md-button id="addClimbFormBtn" class="md-raised md-warn" ng-disabled="addClimbForm.$invalid" type="submit"><span ng-bind='checkValidity(addClimbForm.$invalid)'></span></md-button>
 
     </form>
+
   </md-content>
+
 </md-sidenav>

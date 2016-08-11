@@ -32,11 +32,23 @@ router.get('/allmarkers', function(req, res, next) {
         type: markers[i].climb_type,
         grade: markers[i].climb_grade,
         message: `
+        <div style="color:black;">
         <div>
-        <p>Climing Area: ${markers[i].climbing_area}</p>
+        <h4>Climing Area: ${markers[i].climbing_area}</h4>
+        <h5>Route Name: ${markers[i].route_name}</h5>
         </div>
         <div>
-        <p>Description: ${markers[i].description}</p>
+        <img style="max-height:180px; max-width:180px; height:auto; width:auto;" src="${markers[i].picture_url}"/>
+        </div>
+        <div>
+        <p style="text-align: left;">
+        Climb Type: ${markers[i].climb_type} <br>
+        Climb Grade: ${markers[i].climb_grade}
+        </p>
+        </div>
+        <div>
+        <p style="text-align: left;">Description: ${markers[i].description}</p>
+        </div>
         </div>
         `,
         focus: false,

@@ -171,6 +171,9 @@
       var leafEvent = args.leafletEvent;
       $rootScope.$broadcast('populateAndOpenSideNav', leafEvent);
 
+
+
+
       $scope.filteredMarkerArr.push({
         lat: leafEvent.latlng.lat,
         lng: leafEvent.latlng.lng,

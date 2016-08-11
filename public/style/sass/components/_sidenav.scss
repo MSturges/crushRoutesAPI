@@ -7,3 +7,38 @@
   text-align: left;
   width: 100%;
 }
+
+#addClimbFormBtn {
+  width: 100%;
+  margin-left: 0px;
+  color: black;
+}
+
+.dropDownSelect {
+  width: 49%;
+}
+
+#description {
+  margin-bottom: 0px;
+}
+
+
+md-sidenav {
+
+  md-toolbar {
+    background: rgba(0, 0, 0, 0.9) !important;
+    height: 80px !important;
+    h1 {
+      margin-top: 7px !important;
+      color: rgb(233, 174, 64);
+      font-weight: bold;
+      text-decoration: underline;
+    }
+    md-button {
+    }
+  }
+  md-content {
+    // background: rgb(144, 144, 144);
+  }
+
+}

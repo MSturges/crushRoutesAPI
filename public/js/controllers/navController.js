@@ -15,6 +15,8 @@
     '$window'
   ]
 
+
+
   function NavController ($log, $scope, $rootScope, $state, $timeout, $mdSidenav, MapService, $window) {
 
     $scope.currentNavItem = $rootScope.currentNavItem;
@@ -57,6 +59,7 @@
       $scope.toggleSideNavBar();
       $scope.values.lat = leafEvent.latlng.lat;
       $scope.values.lng = leafEvent.latlng.lng;
+  
     });
 
 

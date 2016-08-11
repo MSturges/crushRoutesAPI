@@ -5,18 +5,15 @@
 
       <md-input-container class="md-block">
         <label>User Name</label>
-
         <input type="text" required="" name="userName" ng-minlength="6" ng-maxlength="26" ng-model="login.name">
-
         <div ng-messages="loginForm.userName.$error">
           <div ng-message="required">User Name Required</div>
           <div ng-message="minlength">User Name must be 6 characters long</div>
           <div ng-message="maxlength">User Name must be less than 20 characters long</div>
         </div>
-
       </md-input-container>
 
-      <md-input-container>
+      <md-input-container class="md-block">
         <label>Password</label>
         <input type="password" required="" name="password" ng-minlength="6" ng-maxlength="26" ng-model="login.password">
         <div ng-messages="loginForm.password.$error">
@@ -27,7 +24,8 @@
       </md-input-container>
 
       <p>
-        <input type="submit">
+
+        <md-button class="md-raised md-warn md-hue-1" ng-disabled="loginForm.$invalid" type="submit"><span ng-bind='checkValidity(loginForm.$invalid)'></span></md-button>
       </p>
 
     </form>

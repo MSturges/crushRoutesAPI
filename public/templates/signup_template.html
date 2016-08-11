@@ -16,7 +16,7 @@
 
       </md-input-container>
 
-      <md-input-container>
+      <md-input-container class="md-block">
         <label>Password</label>
         <input type="password" required="" name="password" ng-minlength="6" ng-maxlength="26" ng-model="user.password">
 
@@ -25,12 +25,10 @@
           <div ng-message="minlength">User Password must be 6 characters long</div>
           <div ng-message="maxlength">User Password must be less than 20 characters long</div>
         </div>
-
       </md-input-container>
 
-
       <p>
-        <input type="submit">
+        <md-button class="md-raised md-warn md-hue-1" ng-disabled="signupForm.$invalid" type="submit"><span ng-bind='checkValidity(signupForm.$invalid)'></span></md-button>
       </p>
 
     </form>
