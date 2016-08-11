@@ -10,8 +10,8 @@
 
         <div ng-messages="loginForm.userName.$error">
           <div ng-message="required">User Name Required</div>
-          <div ng-message="minlength">Your field is too short</div>
-          <div ng-message="maxlength">Your field is too long test</div>
+          <div ng-message="minlength">User Name must be 6 characters long</div>
+          <div ng-message="maxlength">User Name must be less than 20 characters long</div>
         </div>
 
       </md-input-container>
@@ -21,8 +21,8 @@
         <input type="password" required="" name="password" ng-minlength="6" ng-maxlength="26" ng-model="login.password">
         <div ng-messages="loginForm.password.$error">
           <div ng-message="required">Password Required</div>
-          <div ng-message="minlength">Your field is too short</div>
-          <div ng-message="maxlength">Your field is too long test</div>
+          <div ng-message="minlength">User Password must be 6 characters long</div>
+          <div ng-message="maxlength">User Password must be less than 20 characters long</div>
         </div>
       </md-input-container>
 

@@ -17,7 +17,6 @@
       var deferred = $q.defer();
       $http.post('/login', loginObject)
       .then(function (response) {
-        console.log('RES', response);
         $window.localStorage.setItem('token', response.data.token);
         $window.localStorage.setItem('user', JSON.stringify(response.data.user));
         deferred.resolve(response);

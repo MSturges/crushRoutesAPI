@@ -8,10 +8,11 @@
     '$log',
     '$scope',
     'LoginService',
-    '$state'
+    '$state',
+    '$rootScope'
   ]
 
-  function LoginController ($log, $scope, LoginService, $state) {
+  function LoginController ($log, $scope, LoginService, $state, $rootScope) {
 
     $scope.userLogin = function () {
       $log.info('user: ', $scope.login)

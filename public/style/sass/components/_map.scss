@@ -1,20 +1,26 @@
-ng-map {
-  height: 500px;
-  margin: 25px auto;
-}
-
 #mapContainer {
-  background: rgba(29,31,33, .4) !important;
+  background: rgba(0, 0, 0, 0.9) !important;
   width: 75%;
   margin: 0 auto;
   border: 4px solid black;
+  text-align: center;
+  margin-top: 40px;
+}
 
-
+#controlContainer {
+  background: rgb(71, 71, 71) !important;
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  border: 4px solid black;
   text-align: center;
 }
 
 .hiddenMap {
-  visibility: hidden;
+  position: absolute;
+  left: -8000px;
+  top: -8000px;
 }
 
 .shownMap {
