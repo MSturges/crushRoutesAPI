@@ -34,7 +34,7 @@
 
     $scope.ip = "";
     $scope.searchIP = function(ip) {
-      var url = "http://freegeoip.net/json/" + ip;
+      var url = "https://freegeoip.net/json/" + ip;
       $http.get(url).success(function(res) {
         $scope.center_boulder = {
           lat: res.latitude,
