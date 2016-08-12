@@ -2,6 +2,9 @@
 
   <md-content layout-padding="">
     <form name="signupForm" ng-submit="createUser()()">
+      <div class='authErrorContainer' ng-if='signupError'>
+        <p ng-bind='signupError'></p>
+      </div>
 
       <md-input-container class="md-block">
         <label>User Name</label>

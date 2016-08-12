@@ -21,6 +21,7 @@
         $state.go('home');
       })
       .catch(function(err){
+        $scope.loginError = err;
       })
     }
 

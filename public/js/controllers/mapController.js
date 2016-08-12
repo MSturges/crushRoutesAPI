@@ -9,19 +9,21 @@
     '$scope',
     '$rootScope',
     'MapService',
-    '$state'
+    '$state',
+    '$http'
   ]
 
-  function MapController ($log, $scope, $rootScope, MapService, $state) {
+  function MapController ($log, $scope, $rootScope, MapService, $state, $http) {
     angular.extend($scope, {
       defaults: {
         zoomControl: false
       },
-      boulder: {
+      center_boulder: {
         lat: 40.015,
         lng: -105.27,
         zoom: 13
       },
+      boulder: {},
       events: {},
       rock: {},
       ice: {},
@@ -29,6 +31,23 @@
       markers: [],
       filteredMarkerArr: []
     });
+
+    $scope.ip = "";
+    $scope.searchIP = function(ip) {
+      var url = "http://freegeoip.net/json/" + ip;
+      $http.get(url).success(function(res) {
+        $scope.center_boulder = {
+          lat: res.latitude,
+          lng: res.longitude,
+          zoom: 12
+        };
+        $scope.ip = res.ip;
+      });
+    };
+
+
+
+
 
     var rockScale = {
       '5.0': 1,
@@ -153,6 +172,7 @@
           $scope.markers = markers;
           // because we don't need to filter yet set filteredMarkerArr to all markers
           $scope.filteredMarkerArr = $scope.markers;
+          console.log($scope.filteredMarkerArr);
         })
       } else {
         // if real filter is applied - run filter on markers

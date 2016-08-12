@@ -31,6 +31,8 @@ router.get('/allmarkers', function(req, res, next) {
         group: markers[i].climbing_area,
         type: markers[i].climb_type,
         grade: markers[i].climb_grade,
+        url: markers[i].picture_url,
+        description: markers[i].description,
         message: `
         <div style="color:black;">
         <div>
@@ -121,7 +123,7 @@ router.post('/signup', function (req, res, next) {
     })
     .catch(function(err){
       console.log('catching an error', err);
-      res.status(500).json(err);
+      res.status(200).json(err);
     })
   }
 });

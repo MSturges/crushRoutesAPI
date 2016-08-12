@@ -18,9 +18,13 @@
       var deferred = $q.defer();
       $http.post('/signup', userObject)
       .then(function (response) {
-        $window.localStorage.setItem('token', response.data.token);
-        $window.localStorage.setItem('user', JSON.stringify(response.data.user));
-        $state.go('home');
+        if (response.data.constraint) {
+          deferred.reject('User of that name already exists');
+        } else if(response.data.token && response.data.user){
+          $window.localStorage.setItem('token', response.data.token);
+          $window.localStorage.setItem('user', JSON.stringify(response.data.user));
+          $state.go('home');
+        }
       })
       .catch(function(err){
         deferred.reject(err)

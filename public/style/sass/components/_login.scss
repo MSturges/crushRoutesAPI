@@ -2,7 +2,7 @@
   margin-top: 40px;
 
   md-content {
-  width: 35%;
+    width: 35%;
     form {
       border: 4px solid black;
       background-color: rgba(0, 0, 0, 0.7);
@@ -25,4 +25,14 @@
 
 p {
   text-align:center;
+}
+
+.authErrorContainer {
+  padding-bottom: 15px !important;
+  p {
+    color: red;
+    font-size: 1.3em;
+    text-decoration: underline;
+    font-weight: bold;
+  }
 }

@@ -21,7 +21,7 @@
         $state.go('home');
       })
       .catch(function(err){
-        $log.error(err);
+        $scope.signupError = err;
       })
     }
 
