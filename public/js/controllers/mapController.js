@@ -45,10 +45,6 @@
       });
     };
 
-
-
-
-
     var rockScale = {
       '5.0': 1,
       '5.1': 2,
@@ -190,10 +186,6 @@
     $scope.$on("leafletDirectiveMap.click", function(event, args){
       var leafEvent = args.leafletEvent;
       $rootScope.$broadcast('populateAndOpenSideNav', leafEvent);
-
-
-
-
       $scope.filteredMarkerArr.push({
         lat: leafEvent.latlng.lat,
         lng: leafEvent.latlng.lng,
