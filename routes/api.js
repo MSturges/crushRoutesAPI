@@ -19,10 +19,62 @@ router.post('/checkTokenValidity', function(req, res, next) {
   }
 });
 
+
+router.get('/listClimbing', function(req, res, next){
+  knex('routes')
+  .then(function(list_climbing){
+    var listClimbingArr = [];
+
+    var checkIfPresent = function(value){
+      var listBoolean = false;
+      for (var k = 0; k < listClimbingArr.length; k++) {
+        if (value == listClimbingArr[k].climbing_area) {
+          return listBoolean = true;
+        }
+      }
+      return listBoolean;
+    }
+
+    for (var j = 0; j < list_climbing.length; j++) {
+
+      if (checkIfPresent(list_climbing[j].climbing_area) == false) {
+        var listMarkerObj = {
+          climbing_area: list_climbing[j].climbing_area,
+          type: list_climbing[j].climb_type,
+          description: list_climbing[j].description,
+          url: list_climbing[j].picture_url
+        };
+        listClimbingArr.push(listMarkerObj);
+      }
+
+      // else if (checkIfPresent(list_climbing[j].climbing_area) == true) {
+      //
+      //   for (var l = 0; l < listClimbingArr.length; l++) {
+      //
+      //     if (listClimbingArr[l].climbing_area == list_climbing[j].climbing_area) {
+      //
+      //
+      //     }
+      //
+      //   }
+      //
+      // }
+
+    }
+    res.status(200).json(listClimbingArr);
+  })
+  .catch(function(err){
+    res.status(500).json(err);
+  });
+});
+
+
+
 router.get('/allmarkers', function(req, res, next) {
   knex('routes')
   .then(function(markers){
     var customMarkerArr = [];
+    console.log('!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!', markers);
     for (var i = 0; i < markers.length; i++) {
       var markerObj = {
         lat: markers[i].lat,

@@ -14,11 +14,7 @@
 
   function MapService ($log, $q, $http, PermissionService, $window) {
 
-
-
-
     this.getMarkers = function() {
-      console.log('getMarkers');
       var deferred = $q.defer();
       $http.get('/allmarkers')
       .then(function(markers){
@@ -50,6 +46,32 @@
       return deferred.promise;
     }
 
+
+    this.gettingShitDone = function() {
+      var deferred = $q.defer();
+      $http.get('/listClimbing')
+      .then(function(success){
+        console.log(success)
+        deferred.resolve(success)
+      })
+      .catch(function(err) {
+        deferred.reject(err);
+      })
+      return deferred.promise;
+    }
+
+
+    // this.getMarkers = function() {
+    //   var deferred = $q.defer();
+    //   $http.get('/allmarkers')
+    //   .then(function(markers){
+    //     deferred.resolve(markers.data);
+    //   })
+    //   .catch(function(err){
+    //     deferred.reject(err);
+    //   })
+    //   return deferred.promise;
+    // },
 
 
 
