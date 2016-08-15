@@ -9,6 +9,28 @@
 
     $scope.defaults = { zoomControl: false };
     $scope.center_boulder = { lat: 40.015, lng: -105.27, zoom: 13 };
+    $scope.layers = {
+      baselayers: {
+        googleHybrid: {
+          name: 'Google Hybrid',
+          layerType: 'HYBRID',
+          type: 'google'
+        },
+        googleTerrain: {
+          name: 'Google Terrain',
+          layerType: 'TERRAIN',
+          type: 'google'
+        },
+        googleRoadmap: {
+          name: 'Google Streets',
+          layerType: 'ROADMAP',
+          type: 'google'
+        }
+      }
+    };
+
+
+
     $scope.boulder = {};
     $scope.events = {};
     $scope.rock = {};
