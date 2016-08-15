@@ -15,7 +15,7 @@
     this.checkTokenValidity = function() {
       var deferred = $q.defer();
       if ($window.localStorage.getItem('token')) {
-        $http.post('/checkTokenValidity', { token: $window.localStorage.getItem('token'), user:  $window.localStorage.getItem('user') })
+        $http.post('/auth/checkTokenValidity', { token: $window.localStorage.getItem('token'), user:  $window.localStorage.getItem('user') })
         .then(function(response) {
           if (response.data.success) {
             deferred.resolve(true);

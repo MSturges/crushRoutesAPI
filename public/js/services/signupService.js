@@ -16,7 +16,7 @@
 
     this.createUser = function(userObject) {
       var deferred = $q.defer();
-      $http.post('/signup', userObject)
+      $http.post('/auth/signup', userObject)
       .then(function (response) {
         if (response.data.constraint) {
           deferred.reject('User of that name already exists');

@@ -1,0 +1,15 @@
+<div class="routes_template">
+
+    <md-subheader class="md-no-sticky">Routes around your location</md-subheader>
+    <md-list-item id="left" class="md-3-line" ng-repeat="item in currentModalItem.routesForArea.routes" ng-click="openFromLeft(item)">
+      <img ng-src="{{item.picture_url}}?{{$index}}" class="md-avatar" alt="{{item.who}}">
+      <div class="md-list-item-text" layout="column">
+        <h3>Climbing Area: {{ item.climbing_area }}</h3>
+        <h4>Climbing type: {{ item.type }}</h4>
+        <h4>Climbing type: {{ item.description }}</h4>
+      </div>
+    </md-list-item>
+    <md-divider></md-divider>
+
+
+</div>

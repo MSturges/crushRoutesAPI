@@ -46,7 +46,6 @@
       return deferred.promise;
     }
 
-
     this.gettingShitDone = function() {
       var deferred = $q.defer();
       $http.get('/listClimbing')
@@ -61,18 +60,18 @@
     }
 
 
-    // this.getMarkers = function() {
-    //   var deferred = $q.defer();
-    //   $http.get('/allmarkers')
-    //   .then(function(markers){
-    //     deferred.resolve(markers.data);
-    //   })
-    //   .catch(function(err){
-    //     deferred.reject(err);
-    //   })
-    //   return deferred.promise;
-    // },
-
+    this.grabRoutes = function(area) {
+      var deferred = $q.defer();
+      $http.post('/grabRoutes', { climbing_area: area } )
+      .then(function(success){
+        console.log(success)
+        deferred.resolve(success)
+      })
+      .catch(function(err) {
+        deferred.reject(err);
+      })
+      return deferred.promise;
+    }
 
 
 

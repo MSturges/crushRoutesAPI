@@ -7,6 +7,7 @@ const cors = require('cors')
 
 
 const api = require('./routes/api')
+const auth = require('./routes/auth')
 
 const app = express()
 
@@ -18,6 +19,7 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(express.static(path.join(__dirname, 'public')))
 
 app.use('/', api)
+app.use('/auth', auth)
 
 
 // There is a special routing method, app.all(), which is not derived from

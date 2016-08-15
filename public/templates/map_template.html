@@ -2,104 +2,92 @@
 
 
   <md-content layout="row" id="searchMap">
-    <!-- <form id="searchLocation"flex="25" ng-submit="$event.preventDefault()">
-    <md-autocomplete md-selected-item="ctrl.selectedItem" md-search-text-change="ctrl.searchTextChange(ctrl.searchText)" md-search-text="ctrl.searchText" md-selected-item-change="ctrl.selectedItemChange(item)" md-items="item in ctrl.querySearch(ctrl.searchText)" md-item-text="item.display" md-min-length="0" placeholder="Search by Location">
-    <md-item-template>
-    <span md-highlight-text="ctrl.searchText" md-highlight-flags="^i">{{item.display}}</span>
-  </md-item-template>
-  <md-not-found>
-  No states matching "{{ctrl.searchText}}" were found.
-  <a ng-click="ctrl.newState(ctrl.searchText)">Create a new one!</a>
-</md-not-found>
 
-</md-autocomplete>
-</form> -->
-<div flex="70">
-</div>
-<md-button flex="25" class="md-raised md-warn md-hue-1" ng-click="searchIP(ip)">My location</md-button>
-</md-content>
-
-<leaflet defaults='defaults' markers="filteredMarkerArr" center="center_boulder" width="100%" height="480px"></leaflet>
-<div layout="row" layout-align="space-around center" id="controlContainer">
-
-  <div class="filterContainer">
-    <h4>Rock Grade Filter</h4>
-    <md-input-container >
-      <label>Rock min</label>
-      <md-select ng-model="filter.rock_grade_min">
-        <md-option ng-repeat="grade in rock.min" value="{{grade.abbrev}}">
-          {{grade.abbrev}}
-        </md-option>
-      </md-select>
-    </md-input-container>
-
-    <md-input-container >
-      <label>Rock Max</label>
-      <md-select ng-model="filter.rock_grade_max">
-        <md-option ng-repeat="grade in rock.max" value="{{grade.abbrev}}">
-          {{grade.abbrev}}
-        </md-option>
-      </md-select>
-    </md-input-container>
-  </div>
-
-  <div class="filterContainer">
-    <h4>Boulder Grade Filter</h4>
-    <md-input-container >
-      <label>Boulder Min</label>
-      <md-select ng-model="filter.boulder_grade_min">
-        <md-option ng-repeat="grade in boulder.min" value="{{grade.abbrev}}">
-          {{grade.abbrev}}
-        </md-option>
-      </md-select>
-    </md-input-container>
-
-    <md-input-container >
-      <label>Boulder Max</label>
-      <md-select ng-model="filter.boulder_grade_max">
-        <md-option ng-repeat="grade in boulder.max" value="{{grade.abbrev}}">
-          {{grade.abbrev}}
-        </md-option>
-      </md-select>
-    </md-input-container>
-  </div>
-
-  <div class="filterContainer">
-    <h4>Ice Grade Filter</h4>
-    <md-input-container >
-      <label>Ice min</label>
-      <md-select ng-model="filter.ice_grade_min">
-        <md-option ng-repeat="grade in ice.min" value="{{grade.abbrev}}">
-          {{grade.abbrev}}
-        </md-option>
-      </md-select>
-    </md-input-container>
-
-    <md-input-container >
-      <label>Ice Max</label>
-      <md-select ng-model="filter.ice_grade_max">
-        <md-option ng-repeat="grade in ice.max" value="{{grade.abbrev}}">
-          {{grade.abbrev}}
-        </md-option>
-      </md-select>
-    </md-input-container>
-  </div>
-
-</div>
-
-
-<div id="routeList">
-  <md-subheader class="md-no-sticky">Routes around your location</md-subheader>
-  <md-list-item class="md-3-line" ng-repeat="item in getShitDone" ng-click="null">
-    <img ng-src="{{item.url}}?{{$index}}" class="md-avatar" alt="{{item.who}}">
-    <div class="md-list-item-text" layout="column">
-      <h3>Climbing Area: {{ item.climbing_area }}</h3>
-      <h4>Climbing type: {{ item.type }}</h4>
-      <p>{{ item.description }}</p>
+    <div flex="70">
     </div>
-  </md-list-item>
-  <md-divider></md-divider>
-</div>
+    <md-button flex="25" class="md-raised md-warn " ng-click="searchIP(ip)">My location</md-button>
+  </md-content>
 
+  <leaflet defaults='defaults' markers="filteredMarkerArr" center="center_boulder" width="100%" height="480px"></leaflet>
+  <div layout="row" layout-align="space-around center" id="controlContainer">
+
+    <div class="filterContainer">
+      <h4>Rock Grade Filter</h4>
+      <md-input-container >
+        <label>Rock min</label>
+        <md-select ng-model="filter.rock_grade_min">
+          <md-option ng-repeat="grade in rock.min" value="{{grade.abbrev}}">
+            {{grade.abbrev}}
+          </md-option>
+        </md-select>
+      </md-input-container>
+
+      <md-input-container >
+        <label>Rock Max</label>
+        <md-select ng-model="filter.rock_grade_max">
+          <md-option ng-repeat="grade in rock.max" value="{{grade.abbrev}}">
+            {{grade.abbrev}}
+          </md-option>
+        </md-select>
+      </md-input-container>
+    </div>
+
+    <div class="filterContainer">
+      <h4>Boulder Grade Filter</h4>
+      <md-input-container >
+        <label>Boulder Min</label>
+        <md-select ng-model="filter.boulder_grade_min">
+          <md-option ng-repeat="grade in boulder.min" value="{{grade.abbrev}}">
+            {{grade.abbrev}}
+          </md-option>
+        </md-select>
+      </md-input-container>
+
+      <md-input-container >
+        <label>Boulder Max</label>
+        <md-select ng-model="filter.boulder_grade_max">
+          <md-option ng-repeat="grade in boulder.max" value="{{grade.abbrev}}">
+            {{grade.abbrev}}
+          </md-option>
+        </md-select>
+      </md-input-container>
+    </div>
+
+    <div class="filterContainer">
+      <h4>Ice Grade Filter</h4>
+      <md-input-container >
+        <label>Ice min</label>
+        <md-select ng-model="filter.ice_grade_min">
+          <md-option ng-repeat="grade in ice.min" value="{{grade.abbrev}}">
+            {{grade.abbrev}}
+          </md-option>
+        </md-select>
+      </md-input-container>
+
+      <md-input-container >
+        <label>Ice Max</label>
+        <md-select ng-model="filter.ice_grade_max">
+          <md-option ng-repeat="grade in ice.max" value="{{grade.abbrev}}">
+            {{grade.abbrev}}
+          </md-option>
+        </md-select>
+      </md-input-container>
+    </div>
+
+  </div>
+
+
+  <div id="routeList">
+    <md-subheader class="md-no-sticky">Routes around your location</md-subheader>
+    <md-list-item id="left" class="md-3-line" ng-repeat="item in getShitDone" ng-click="openFromLeft(item)">
+      <img ng-src="{{item.url}}?{{$index}}" class="md-avatar" alt="{{item.who}}">
+      <div class="md-list-item-text" layout="column">
+        <h3>Climbing Area: {{ item.climbing_area }}</h3>
+        <h4>Climbing type: {{ item.type }}</h4>
+        <!-- <p>{{ item.description }}</p> -->
+      </div>
+    </md-list-item>
+    <md-divider></md-divider>
+  </div>
 
 </div>

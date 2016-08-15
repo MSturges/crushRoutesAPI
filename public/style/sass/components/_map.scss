@@ -63,3 +63,32 @@
   width: auto;
   background-color: rgb(0, 0, 0);
 }
+
+.routes_template {
+  height: 420px;
+  width: 1000px;
+  overflow: scroll;
+}
+
+.modalImage {
+  height: 300px;
+  width: 300px;
+}
+
+.md-dialog-container {
+  padding-top: 100px;
+}
+
+.markerContainer {
+  overflow: hidden;
+  color: black;
+  img {
+    max-height: 180px;
+    max-width: 180px;
+    height: auto;
+    width: auto;
+  }
+  p {
+    text-align: left;
+  }
+}

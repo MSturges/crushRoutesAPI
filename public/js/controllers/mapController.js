@@ -4,8 +4,8 @@
   angular.module('crushingRoutes')
   .controller('MapController', MapController)
 
-  MapController.$inject = [ '$log', '$scope', '$rootScope', 'MapService', '$state', '$http']
-  function MapController ($log, $scope, $rootScope, MapService, $state, $http) {
+  MapController.$inject = [ '$log', '$scope', '$rootScope', 'MapService', '$state', '$http', '$mdDialog']
+  function MapController ($log, $scope, $rootScope, MapService, $state, $http, $mdDialog) {
 
     $scope.defaults = { zoomControl: false };
     $scope.center_boulder = { lat: 40.015, lng: -105.27, zoom: 13 };
@@ -154,6 +154,7 @@
       return $scope.showMap
     }
 
+
     setTimeout(function() {
       MapService.gettingShitDone()
       .then(function(res){
@@ -162,9 +163,56 @@
       .catch(function(err){
         console.log(err);
       })
+    }, 500);
 
-    }, 2000);
+
+
+    $scope.currentModalItem;
+
+    var mdDialogCtrl = function ($scope, currentModalItem) {
+      $scope.currentModalItem = currentModalItem
+      $scope.isLockedOpen = function() {
+        console.log('CALLED OPEN');
+      }
+    }
+
+    console.log(  'is this really my life?',   $mdDialog);
+
+    $scope.openFromLeft = function(item) {
+      var body = document.body;
+      var info = document.body.querySelector('.leaflet-control-attribution');
+      body.style.overflow = 'hidden';
+      info.style.display = 'none';
+      $scope.currentModalItem = item;
+
+      MapService.grabRoutes($scope.currentModalItem.climbing_area)
+      .then(function(res){
+        $scope.currentModalItem.routesForArea = res.data;
+      })
+      .catch(function(err){
+        console.log(err);
+      })
+      $mdDialog.show(
+        $mdDialog.alert({
+          controller: mdDialogCtrl,
+          templateUrl: '../../templates/modal_templates/routes_template.html',
+          locals:{currentModalItem: $scope.currentModalItem}
+        })
+        .clickOutsideToClose(true)
+        .escapeToClose(true)
+        // You can specify either sting with query selector
+        .openFrom('#left')
+        // or an element
+        .closeTo(angular.element(document.querySelector('#left')))
+      ).finally(function(){
+        var body = document.body;
+        body.style.overflow = 'scroll';
+        info.style.display = 'block';
+      });
+    };
 
 
   }
+
+
 }())

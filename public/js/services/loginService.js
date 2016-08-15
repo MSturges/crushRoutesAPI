@@ -15,7 +15,7 @@
 
     this.userLogin = function(loginObject) {
       var deferred = $q.defer();
-      $http.post('/login', loginObject)
+      $http.post('/auth/login', loginObject)
       .then(function (response) {
         if (response.data.error) {
           deferred.reject(response.data.error);
