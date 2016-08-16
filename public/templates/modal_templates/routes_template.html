@@ -4,7 +4,7 @@
   <md-list-item id="left" class="md-3-line modal-list-item" ng-repeat="item in currentModalItem.routesForArea.routes" ng-click="openFromLeft(item)">
     <img ng-src="{{item.picture_url}}?{{$index}}" class="md-avatar" alt="{{item.who}}">
     <div class="md-list-item-text" layout="column" layout-align="center start">
-      <h4>Route Name: {{ item.route_name }}</h4>
+      <h4>Name: {{ item.route_name }}</h4>
       <h4>Climbing type: {{ item.climb_type }}</h4>
     </div>
     <div class="modal-list-description">
