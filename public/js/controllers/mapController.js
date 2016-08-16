@@ -28,9 +28,6 @@
         }
       }
     };
-
-
-
     $scope.boulder = {};
     $scope.events = {};
     $scope.rock = {};
@@ -129,6 +126,7 @@
 
     // Listens to a click envent to add marker
     $scope.$on("leafletDirectiveMap.click", function(event, args){
+      window.scrollTo(0, 0);
       var leafEvent = args.leafletEvent;
       $rootScope.$broadcast('populateAndOpenSideNav', leafEvent);
       $scope.filteredMarkerArr.push({
@@ -198,7 +196,6 @@
       }
     }
 
-    console.log(  'is this really my life?',   $mdDialog);
 
     $scope.openFromLeft = function(item) {
       var body = document.body;
@@ -235,6 +232,4 @@
 
 
   }
-
-
 }())

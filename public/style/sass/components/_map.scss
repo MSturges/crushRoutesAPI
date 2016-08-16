@@ -2,7 +2,8 @@
   background: rgba(0, 0, 0, 0.9) !important;
   width: 75%;
   margin: 0 auto;
-  border: 4px solid black;
+  border: 20px solid black;
+  border-radius: 25px;
   text-align: center;
   margin-top: 40px;
   margin-bottom: 40px;
@@ -17,6 +18,12 @@
     margin-bottom: 4px;
     margin-right: 0px !important;
   }
+}
+
+#myLocationBtn {
+  background: rgb(0, 255, 247) !important;
+  color: black;
+  margin-bottom: 20px;
 }
 
 #controlContainer {
@@ -42,7 +49,8 @@
         color: rgb(233,174,64);
       }
       md-select {
-        background: rgb(111, 111, 111);
+        background: white;
+        color: black;
       }
     }
   }
@@ -58,37 +66,23 @@
   visibility: visible;
 }
 
+#locationHeader {
+  background: rgb(0, 255, 247) !important;
+  color: black;
+  font-size: 25px;
+  font-weight: bold;
+  text-decoration: underline;
+  border-radius: 10px;
+}
+
+.modal-list-item {
+  background: black !important;
+  color: rgb(233,174,64) !important;
+}
+
 #routeList {
   height: auto;
   width: auto;
   background-color: rgb(0, 0, 0);
-}
-
-.routes_template {
-  height: 420px;
-  width: 1000px;
-  overflow: scroll;
-}
-
-.modalImage {
-  height: 300px;
-  width: 300px;
-}
-
-.md-dialog-container {
-  padding-top: 100px;
-}
-
-.markerContainer {
-  overflow: hidden;
-  color: black;
-  img {
-    max-height: 180px;
-    max-width: 180px;
-    height: auto;
-    width: auto;
-  }
-  p {
-    text-align: left;
-  }
+  color: rgb(233,174,64);
 }

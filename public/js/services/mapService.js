@@ -64,7 +64,6 @@
       var deferred = $q.defer();
       $http.post('/grabRoutes', { climbing_area: area } )
       .then(function(success){
-        console.log(success)
         deferred.resolve(success)
       })
       .catch(function(err) {

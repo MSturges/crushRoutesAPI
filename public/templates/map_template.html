@@ -5,7 +5,7 @@
 
     <div flex="70">
     </div>
-    <md-button flex="25" class="md-raised md-warn " ng-click="searchIP(ip)">My location</md-button>
+    <md-button id="myLocationBtn" flex="25" class="md-raised" ng-click="searchIP(ip)">My location</md-button>
   </md-content>
 
   <leaflet defaults='defaults' layers="layers" markers="filteredMarkerArr" center="center_boulder" width="100%" height="480px"></leaflet>
@@ -78,7 +78,7 @@
 
 
   <div id="routeList">
-    <md-subheader class="md-no-sticky">Routes around your location</md-subheader>
+    <md-subheader id="locationHeader" class="md-no-sticky">Climbing Locations</md-subheader>
     <md-list-item id="left" class="md-3-line" ng-repeat="item in getShitDone" ng-click="openFromLeft(item)">
       <img ng-src="{{item.url}}?{{$index}}" class="md-avatar" alt="{{item.who}}">
       <div class="md-list-item-text" layout="column">
