@@ -1,4 +1,3 @@
-.flex-start { -webkit-align-self: flex-start; align-self: flex-start; }
 #navigator-bg {
   background: rgb(0, 0, 0);
   position: fixed;
@@ -7,7 +6,7 @@
   height: 100px;
   z-index: 9999;
   display: flex;
-  justify-content: flex-end;
+
   #Logo {
     height: 70px;
     margin-top: 0px;
@@ -15,6 +14,8 @@
   }
 
 }
+
+
 
 .md-unselected {
   color: rgb(233,174,64) !important;

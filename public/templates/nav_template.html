@@ -1,22 +1,23 @@
-<!-- <md-content id="navigator-bg" class="md-padding flex-container">
+<!-- <md-content id="navigator-bg" class="md-padding">
+  <md-nav-bar class='flex-container' md-selected-nav-item="currentNavItem" nav-bar-aria-label="navigation links">
+    <img id="Logo" src="../images/CrushRoutes.png" alt="" />
+    <md-nav-item class='navItem' id="home" md-nav-sref="home" name="home">Home</md-nav-item>
+    <md-nav-item class='navItem' md-nav-sref="about" name="about">About</md-nav-item>
+    <md-nav-item class='navItem' ng-hide="checkLogin()" md-nav-sref="login" name="login">Login</md-nav-item>
+    <md-nav-item class='navItem' ng-hide="checkLogin()" md-nav-sref="signup" name="signup">Sign Up</md-nav-item>
+    <md-button class='navItem' id='logoutButton' ng-show="checkLogin()" ng-click="logout()">Logout</md-button>
+  </md-nav-bar>
+</md-content> -->
+
+<md-content id="navigator-bg" layout="row" layout-align="end start" class="md-padding">
 <md-nav-bar md-selected-nav-item="currentNavItem" nav-bar-aria-label="navigation links">
+<!-- <img id="Logo" src="../images/CrushRoutes.png" alt="" /> -->
 <md-nav-item id="home" md-nav-sref="home" name="home">Home</md-nav-item>
 <md-nav-item md-nav-sref="about" name="about">About</md-nav-item>
 <md-nav-item ng-hide="checkLogin()" md-nav-sref="login" name="login">Login</md-nav-item>
 <md-nav-item ng-hide="checkLogin()" md-nav-sref="signup" name="signup">Sign Up</md-nav-item>
 <md-button id='logoutButton' ng-show="checkLogin()" ng-click="logout()">Logout</md-button>
 </md-nav-bar>
-</md-content> -->
-
-<md-content id="navigator-bg" layout="row" layout-align="end start" class="md-padding">
-  <md-nav-bar md-selected-nav-item="currentNavItem" nav-bar-aria-label="navigation links">
-    <!-- <img id="Logo" src="../images/CrushRoutes.png" alt="" /> -->
-    <md-nav-item id="home" md-nav-sref="home" name="home">Home</md-nav-item>
-    <md-nav-item md-nav-sref="about" name="about">About</md-nav-item>
-    <md-nav-item ng-hide="checkLogin()" md-nav-sref="login" name="login">Login</md-nav-item>
-    <md-nav-item ng-hide="checkLogin()" md-nav-sref="signup" name="signup">Sign Up</md-nav-item>
-    <md-button id='logoutButton' ng-show="checkLogin()" ng-click="logout()">Logout</md-button>
-  </md-nav-bar>
 </md-content>
 
 <md-sidenav class="md-sidenav-left" md-component-id="left"  md-whiteframe="4">

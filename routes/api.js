@@ -82,7 +82,7 @@ router.get('/allmarkers', function(req, res, next) {
         <h4>Climing Area: ${markers[i].climbing_area}</h4>
         <h5>Route Name: ${markers[i].route_name}</h5>
         </div>
-        <div>
+        <div class="imgDiv">
         <img src="${markers[i].picture_url}"/>
         </div>
         <div>

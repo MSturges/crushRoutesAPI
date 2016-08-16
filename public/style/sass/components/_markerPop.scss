@@ -1,16 +1,29 @@
 .markerContainer {
   overflow: hidden;
   color: black;
-  min-width: 200px;
+  min-width: 300px;
+  margin: 0 !important;
+  padding: 0 !important;
+
+  .imgDiv {
+    margin: 0 !important;
+    padding: 0 !important;
+    min-width: 180px !important;
+  }
+
   img {
-    max-height: 180px;
-    max-width: 180px;
+    display: block;
+    min-width: 170px !important;
     height: auto;
-    width: auto;
+    width: 100%;
+    margin: 0 !important;
+    padding: 0 !important;
   }
 
   p {
     text-align: left;
   }
+
+
 
 }
