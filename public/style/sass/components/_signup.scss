@@ -1,11 +1,12 @@
 #signupForm {
-  margin-top: 40px;
+  margin-top: 200px;
 
   md-content {
     width: 35%;
+    background-color: rgba(0, 0, 0, 0.7) !important;
+
     form {
       border: 4px solid black;
-      background-color: rgba(0, 0, 0, 0.7) !important;
       color: rgb(233,174,64);
       margin: 0;
       padding: 30px;

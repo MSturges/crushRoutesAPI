@@ -1,5 +1,12 @@
 body {
-  background: rgb(210, 210, 210);
+
+  background: url("../../images/crushRoutes.jpeg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
+  // background: rgb(210, 210, 210);
   display: table;
   width: 100%;
 }

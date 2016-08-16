@@ -3,6 +3,8 @@
   width: 1000px;
   overflow: scroll;
   color: rgba(0, 0, 0, .5) !important;
+  border: 3px solid rgb(0, 255, 247);
+  background: black;
 }
 
 .modalImage {
@@ -11,23 +13,13 @@
 }
 
 .md-dialog-container {
-  padding-top: 100px;
-}
-
-.markerContainer {
-  overflow: hidden;
-  color: black;
-  img {
-    max-height: 180px;
-    max-width: 180px;
-    height: auto;
-    width: auto;
-  }
-
-  p {
-    text-align: left;
-  }
-
+  width: 100%;
+  padding-top: 450px;
+  height: 100%;
+  top: inherit !important;
+  bottom: 0px;
+  left: 0px;
+  position: fixed;
 }
 
 #modalHeader {
@@ -35,11 +27,20 @@
   color: black;
   font-size: 25px;
   font-weight: bold;
-  text-decoration: underline;
+  // text-decoration: underline;
+  .modalHeaderSpanOne{
+    border-bottom: 2px solid black !important;
+  }
+
+  .modalHeaderSpanTwo {
+    padding-left: 10px;
+    border: none;
+  }
 
 }
 
-.modal-list-description {
-  margin-left: 60px;
 
+.modal-list-description {
+  padding-top: 5px;
+  text-align: right !important;
 }

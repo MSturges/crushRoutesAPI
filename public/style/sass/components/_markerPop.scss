@@ -1,0 +1,15 @@
+.markerContainer {
+  overflow: hidden;
+  color: black;
+  img {
+    max-height: 180px;
+    max-width: 180px;
+    height: auto;
+    width: auto;
+  }
+
+  p {
+    text-align: left;
+  }
+
+}

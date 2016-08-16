@@ -219,9 +219,7 @@
         })
         .clickOutsideToClose(true)
         .escapeToClose(true)
-        // You can specify either sting with query selector
         .openFrom('#left')
-        // or an element
         .closeTo(angular.element(document.querySelector('#left')))
       ).finally(function(){
         var body = document.body;

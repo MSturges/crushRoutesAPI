@@ -1,6 +1,10 @@
 
 #navigator-bg {
-  background: rgba(0, 0, 0, 0.9);
+  background: rgb(0, 0, 0);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 9999;
 }
 
 .md-unselected {

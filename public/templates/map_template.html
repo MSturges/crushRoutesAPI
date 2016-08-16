@@ -1,15 +1,17 @@
 <div id="mapContainer" ng-class="mapClass(checkRoute())" map-lazy-load="https://maps.google.com/maps/api/js">
 
 
-  <md-content layout="row" id="searchMap">
-
-    <div flex="70">
-    </div>
-    <md-button id="myLocationBtn" flex="25" class="md-raised" ng-click="searchIP(ip)">My location</md-button>
+  <md-content id="searchMap" layout="row" layout-align="end center">
+    <md-button flex="20"id="myLocationBtn" class="md-raised" ng-click="searchIP(ip)">My location</md-button>
   </md-content>
 
   <leaflet defaults='defaults' layers="layers" markers="filteredMarkerArr" center="center_boulder" width="100%" height="480px"></leaflet>
+
+
+ <md-subheader id="filterHeader" class="md-no-sticky">Filter By Difficulty</md-subheader>
+
   <div layout="row" layout-align="space-around center" id="controlContainer">
+
 
     <div class="filterContainer">
       <h4>Rock Grade Filter</h4>
