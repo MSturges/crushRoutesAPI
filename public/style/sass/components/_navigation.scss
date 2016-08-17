@@ -4,18 +4,24 @@
   top: 0;
   width: 100%;
   height: 100px;
-  z-index: 9999;
-  display: flex;
+  z-index: 10;
+  // position: relative;
+  // display: flex;
 
   #Logo {
     height: 70px;
     margin-top: 0px;
     padding-top: 0px;
   }
-
+}
+.leaflet-control-layers-toggle {
+  display: none;
 }
 
-
+.flexTestDiv {
+  height: 100%;
+  width: 20px;
+}
 
 .md-unselected {
   color: rgb(233,174,64) !important;

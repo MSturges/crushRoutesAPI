@@ -10,11 +10,16 @@
 
  <md-subheader id="filterHeader" class="md-no-sticky">Filter By Difficulty</md-subheader>
 
-  <div layout="row" layout-align="space-around center" id="controlContainer">
+  <div id="filterContainer" layout="row" layout-align="space-around center" id="controlContainer">
 
 
     <div class="filterContainer">
-      <h4>Rock Grade Filter</h4>
+
+      <div class="filterHead">
+        <img class="filterIMG" src="https://cdn1.iconfinder.com/data/icons/Map-Markers-Icons-Demo-PNG/128/Map-Marker-Marker-Outside-Chartreuse.png"/>
+        <h4>Rock Grade Filter</h4>
+      </div>
+
       <md-input-container >
         <label>Rock min</label>
         <md-select ng-model="filter.rock_grade_min">
@@ -35,7 +40,12 @@
     </div>
 
     <div class="filterContainer">
-      <h4>Boulder Grade Filter</h4>
+
+      <div class="filterHead">
+        <img class="filterIMG" src="https://cdn4.iconfinder.com/data/icons/small-n-flat/24/map-marker-128.png"/>
+        <h4>Boulder Grade Filter</h4>
+      </div>
+
       <md-input-container >
         <label>Boulder Min</label>
         <md-select ng-model="filter.boulder_grade_min">
@@ -56,7 +66,12 @@
     </div>
 
     <div class="filterContainer">
-      <h4>Ice Grade Filter</h4>
+
+      <div class="filterHead">
+        <img class="filterIMG" src="https://cdn1.iconfinder.com/data/icons/Map-Markers-Icons-Demo-PNG/128/Map-Marker-Marker-Outside-Azure.png"/>
+        <h4>Ice Grade Filter</h4>
+      </div>
+
       <md-input-container >
         <label>Ice min</label>
         <md-select ng-model="filter.ice_grade_min">

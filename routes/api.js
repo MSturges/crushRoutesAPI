@@ -9,6 +9,7 @@ const jwt = require('jsonwebtoken');
 router.get('/listClimbing', function(req, res, next){
   knex('routes')
   .then(function(list_climbing){
+
     var listClimbingArr = [];
 
     var checkIfPresent = function(value){
@@ -20,6 +21,7 @@ router.get('/listClimbing', function(req, res, next){
       }
       return listBoolean;
     }
+
     for (var j = 0; j < list_climbing.length; j++) {
       if (checkIfPresent(list_climbing[j].climbing_area) == false) {
         var listMarkerObj = {

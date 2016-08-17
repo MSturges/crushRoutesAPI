@@ -2,10 +2,46 @@
   height: 420px;
   width: 1000px;
   overflow: scroll;
-  color: rgba(0, 0, 0, .5) !important;
+  // color: rgba(0, 0, 0, .5) !important;
+  color: white !important;
   border: 3px solid rgb(0, 255, 247);
   background: black;
+  // ._md-list-item-inner {
+  //   color: rgb(233,174,64);
+  //   div {
+  //     width: 0 !important;
+  //   }
+  //
+  //   p {
+  //     text-align: left;
+  //     word-break: break-all;
+  //   //   word-wrap: break-word;
+  //   }
+  //
+  //
+  // }
+
 }
+// .routeContainer {
+//   height: 100px;
+// }
+//
+// .routeInfoContainer {
+//   display: inline-block;
+//   position: relative;
+//   height: 100%;
+// }
+// .descriptionContainer {
+//   display: inline-block;
+//   position: relative;
+//   height: 100%;
+//   padding: 0;
+//   width: 0;
+//   * {
+//     padding: 0;
+//     width: 0;
+//   }
+// }
 
 
 
@@ -42,7 +78,8 @@
 }
 
 
-.modal-list-description {
-  padding-top: 5px;
-  text-align: right !important;
-}
+// .modal-list-description {
+//   // text-align: left !important;
+//   margin-left: 0 !important;
+//   padding-left: 0 !important
+// }
