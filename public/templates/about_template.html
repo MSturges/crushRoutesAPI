@@ -1,19 +1,80 @@
-<div id="aboutContainer">
+<div id="aboutContainer" ng-cloak>
 
   <md-content>
 
-    <img layout="row" layout-align="center center" class="portfolioSite" src="../images/norway-mountain-sky-blue.jpg" />
+    <md-tabs md-dynamic-height md-border-bottom>
 
-    <p>
-      Crushing routes is the wikipedia for climbing routes! Find your next big project, either being rock, boulder or ice.
-      Climbers from all over the world can share their inspiring climbing routes with the community.
-    </p>
+      <md-tab label="About">
+        <md-content class="container">
+          <h1 class="md-display-2">About</h1>
+          <div class="row">
+            <img id="aboutImage" class="col-md-4 col-lg-4" src="../images/norway-mountain-sky-blue.jpg" />
+            <p class="col-md-7 col-lg-7">
+              Crush routes is the wikipedia for climbing routes! Find your next big project, either being rock, boulder or ice.
+              Climbers from all over the world can share their inspiring climbing routes with the community.
+            </p>
+          </div>
+        </md-content>
+      </md-tab>
 
-    <!-- <p>
-    The community can comment, vote and grade routes provided by other members. The more upvotes your route receive the higher your score.
-    The top 100 users will recive profit sharring from crushing Routes!
-  </p> -->
+      <md-tab label="Route Information">
+        <md-content class="container">
+          <h1 class="md-display-2">Route Information</h1>
+          <div class="row">
+            <img id="openImage" class=" col-md-8 col-lg-8" src="../images/about/clickMarker.png" />
+            <p class="col-md-4 col-lg-4">
+              Click on a marker to reveal individual route information.
+            </p>
+          </div>
+        </md-content>
+      </md-tab>
 
+      <md-tab label="Filter by Difficulty">
+        <md-content class="container">
+          <h1 class="md-display-2">Filter by Difficulty</h1>
+          <div class="row">
+            <img id="filterImage" class="col-md-8 col-lg-8" src="../images/about/filterMarker.png" />
+            <p class="col-md-4 col-lg-4">
+              Select minimum and maximum climb grades for your desired climb category.
+            </p>
+          </div>
+        </md-content>
+      </md-tab>
+
+
+      <md-tab label="Add Route">
+        <md-content class="container">
+          <h1 class="md-display-2">Add Route</h1>
+          <div class="row">
+            <img id="addImage" class="col-md-8 col-lg-8" src="../images/about/addMarker.png" />
+            <p class="col-md-4 col-lg-4">
+              Login then click on the map to add your inspiring climbing route to the community.
+            </p>
+          </div>
+        </md-content>
+      </md-tab>
+
+      <md-tab label="Climbing Areas">
+        <md-content class="container">
+          <h1 class="md-display-2">Climbing Areas</h1>
+
+          <div class="row">
+            <img id="locationImageOne" class="col-md-8 col-lg-8" src="../images/about/locationClimb.png" />
+            <p class="col-md-4 col-lg-4">
+            </p>
+          </div>
+
+          <div class="row">
+            <img id="locationImageTwo" class="col-md-8 col-lg-8" src="../images/about/routeClimb.png" />
+            <p class="col-md-4 col-lg-4">
+              Login then click on the map to add your inspiring climbing route to the community.
+            </p>
+          </div>
+
+        </md-content>
+      </md-tab>
+
+    </md-tabs>
 
   </md-content>
 

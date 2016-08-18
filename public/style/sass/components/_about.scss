@@ -3,43 +3,91 @@
   width: 75%;
   margin: 0 auto;
   border: 20px solid black;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
   border-radius: 25px;
   text-align: center;
   margin-top: 130px;
   margin-bottom: 40px;
+  // height: 900px;
+
 
   md-content {
     background-color: rgb(0, 0, 0) !important;
-    border: 4px solid black;
-    width: 75%;
+    width: 100%;
     margin: 0 auto;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+
+    md-tabs {
+      md-tab {
+      }
+    }
+
+
+    md-tabs md-tabs-wrapper {
+      background: rgb(233,174,64);
+      color: black;
+      height: 50px;
+
+    }
+
+    md-content h1:first-child {
+      margin-top: 0;
+    }
 
     h1 {
       color: rgb(233,174,64);
       text-decoration: underline;
       text-align: center;
+
     }
 
-    img {
+    #aboutImage {
       height: auto;
       width: auto;
-      max-width: 800px;
-      max-height: 1000px;
-      margin-left: auto;
-      margin-right: auto;
-      margin-top: 30px;
+      max-width: 400px;
+      max-height: 400px;
+    }
+
+    #openImage {
+      height: auto;
+      width: auto;
+      max-width: 700px;
+      max-height: 700px;
+    }
+
+    #filterImage {
+      height: auto;
+      width: auto;
+      max-width: 700px;
+      max-height: 700px;
+    }
+
+    #addImage {
+      height: auto;
+      width: auto;
+      max-width: 700px;
+      max-height: 700px;
+    }
+
+    #locationImageOne {
+      
+    }
+
+    #locationImageTwo {
+
     }
 
 
 
     p {
-      margin-top: 50px;
+      // margin-top: 50px;
       margin-bottom: 50px;
       margin-left: auto;
       margin-right: auto;
-      width: 75%;
-
-
       text-align: left;
       font-size: 20px;
       color: rgb(233,174,64);
