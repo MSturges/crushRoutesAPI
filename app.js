@@ -8,6 +8,7 @@ const cors = require('cors')
 
 const api = require('./routes/api')
 const auth = require('./routes/auth')
+const profile = require('./routes/profile')
 
 const app = express()
 
@@ -20,6 +21,7 @@ app.use(express.static(path.join(__dirname, 'public')))
 
 app.use('/', api)
 app.use('/auth', auth)
+app.use('/profile', profile)
 
 
 // There is a special routing method, app.all(), which is not derived from

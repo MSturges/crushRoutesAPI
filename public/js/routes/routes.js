@@ -26,12 +26,16 @@
       url: "/about",
       template: "<about-directive></about-directive>"
     })
+    .state('profile', {
+      url: "/profile",
+      template: "<profile-directive></profile-directive>"
+    })
 
     .state('signup', {
       url: "/signup",
       template: "<signup-directive></signup-directive>"
     })
-    
+
     .state('login', {
       url: "/login",
       template: "<login-directive></login-directive>"

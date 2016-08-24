@@ -21,7 +21,12 @@
     margin-left: 0 !important;
     margin-right: 0 !important;
 
+
+
     md-tabs {
+      md-ink-bar {
+        color: green !important;
+      }
       md-tab {
       }
     }
@@ -74,7 +79,7 @@
     }
 
     #locationImageOne {
-      
+
     }
 
     #locationImageTwo {

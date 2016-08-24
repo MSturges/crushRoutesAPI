@@ -190,14 +190,27 @@
     $scope.currentModalItem;
 
     var mdDialogCtrl = function ($scope, currentModalItem) {
-      $scope.currentModalItem = currentModalItem
+      $scope.currentModalItem = currentModalItem;
+      $scope.currentRoute = {};
       $scope.isLockedOpen = function() {
         console.log('CALLED OPEN');
+      }
+
+      $scope.openSingleRouteModal = function(route) {
+        console.log('ROUTE!!!', route);
+        MapService.grabRouteReviews(route)
+        .then(function(success) {
+          $scope.currentRoute.reviews = success.data
+        })
+        .catch(function(err) {
+          console.log('ERROR IN OPEN SINGLE ROUTE MODAL', err);
+        })
       }
     }
 
 
     $scope.openFromLeft = function(item) {
+
       var body = document.body;
       var info = document.body.querySelector('.leaflet-control-attribution');
       body.style.overflow = 'hidden';
@@ -207,6 +220,7 @@
       MapService.grabRoutes($scope.currentModalItem.climbing_area)
       .then(function(res){
         $scope.currentModalItem.routesForArea = res.data;
+        console.log('IN THEN!!!', $scope.currentModalItem);
       })
       .catch(function(err){
         console.log(err);
@@ -227,7 +241,6 @@
         info.style.display = 'block';
       });
     };
-
 
   }
 }())

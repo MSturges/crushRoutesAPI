@@ -50,7 +50,6 @@
       var deferred = $q.defer();
       $http.get('/listClimbing')
       .then(function(success){
-        console.log(success)
         deferred.resolve(success)
       })
       .catch(function(err) {
@@ -63,6 +62,18 @@
     this.grabRoutes = function(area) {
       var deferred = $q.defer();
       $http.post('/grabRoutes', { climbing_area: area } )
+      .then(function(success){
+        deferred.resolve(success)
+      })
+      .catch(function(err) {
+        deferred.reject(err);
+      })
+      return deferred.promise;
+    }
+
+    this.grabRouteReviews = function(route) {
+      var deferred = $q.defer();
+      $http.post('/grabRouteReviews', { route: route } )
       .then(function(success){
         deferred.resolve(success)
       })

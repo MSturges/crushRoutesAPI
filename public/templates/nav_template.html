@@ -14,6 +14,7 @@
     <!-- <img id="Logo" class='logo' src="../images/CrushRoutes-1.png" alt="" /> -->
     <md-nav-item id="home" md-nav-sref="home" name="home">Home</md-nav-item>
     <md-nav-item md-nav-sref="about" name="about">About</md-nav-item>
+    <md-nav-item ng-show="checkLogin()"md-nav-sref="profile" name="profile">Profile</md-nav-item>
     <md-nav-item ng-hide="checkLogin()" md-nav-sref="login" name="login">Login</md-nav-item>
     <md-nav-item ng-hide="checkLogin()" md-nav-sref="signup" name="signup">Sign Up</md-nav-item>
     <md-button id='logoutButton' ng-show="checkLogin()" ng-click="logout()">Logout</md-button>

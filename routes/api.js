@@ -24,12 +24,14 @@ router.get('/listClimbing', function(req, res, next){
 
     for (var j = 0; j < list_climbing.length; j++) {
       if (checkIfPresent(list_climbing[j].climbing_area) == false) {
+
         var listMarkerObj = {
           climbing_area: list_climbing[j].climbing_area,
           type: list_climbing[j].climb_type,
           description: list_climbing[j].description,
           url: list_climbing[j].picture_url
         };
+
         listClimbingArr.push(listMarkerObj);
       } else if (checkIfPresent(list_climbing[j].climbing_area) == true) {
         for (var l = 0; l < listClimbingArr.length; l++) {
@@ -163,5 +165,14 @@ router.post('/addMarker', function(req, res, next) {
     })
   }
 });
+
+router.post('/grabRouteReviews', function(req,res,next) {
+  knex('routes')
+  .innerJoin('reviews', 'routes.id', 'reviews.route_id')
+  .where({ route_id: req.body.route.id })
+  .then(function(joinedArr) {
+    res.status(200).json(joinedArr)
+  })
+})
 
 module.exports = router
