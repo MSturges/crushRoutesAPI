@@ -38,11 +38,15 @@
           .then(function(success){
             deferred.resolve(success)
           })
+        } else {
+          deferred.reject(result);
         }
       })
       .catch(function(err) {
+        console.log('ERR', err);
         deferred.reject(err);
       })
+
       return deferred.promise;
     }
 
@@ -88,6 +92,7 @@
       var deferred = $q.defer();
       PermissionService.checkTokenValidity()
       .then(function(result){
+        console.log('result in permission submitReview', result);
         if (result) {
           $http.post('/submitReview', {
             formData: formData,
@@ -96,6 +101,7 @@
           })
           .then(function (response){
             if (response.data.error) {
+              console.log('in reject', response);
               deferred.reject(response.data.error);
             } else {
               deferred.resolve(response);
@@ -104,6 +110,7 @@
         }
       })
       .catch(function(err) {
+        console.log('in reject', err);
         deferred.reject(err);
       })
       return deferred.promise;

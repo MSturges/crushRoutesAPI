@@ -59,7 +59,7 @@
       $scope.toggleSideNavBar();
       $scope.values.lat = leafEvent.latlng.lat;
       $scope.values.lng = leafEvent.latlng.lng;
-  
+
     });
 
 

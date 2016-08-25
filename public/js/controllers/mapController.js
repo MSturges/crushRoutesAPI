@@ -215,6 +215,7 @@
       }
 
       $scope.submitReview = function(formData, routeId) {
+        console.log('TEST', formData, routeId);
         MapService.submitReview(formData, routeId)
         .then(function(sucess){
         })
@@ -234,6 +235,7 @@
         $scope.tabs = [$scope.tabs[0]];
         MapService.grabRouteReviews(route)
         .then(function(success) {
+          console.log('GRAB ROUTE REVIEWS', success);
           $scope.tabs.push({
             route_id: success.data.route_id,
             title: success.data.route_name,

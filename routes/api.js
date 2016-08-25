@@ -155,6 +155,7 @@ router.post('/addMarker', function(req, res, next) {
       res.status(200).json({success: 'Success'});
     })
     .catch(function(err){
+      console.log('ERR', err);
       res.status(500).json(err);
     })
   }
@@ -195,7 +196,17 @@ router.post('/grabRouteReviews', function(req,res,next) {
       })
 
     } else {
-      res.status(200).json({route_name: req.body.route.route_name, message: 'No reviews have been submitted for this climb yet!'})
+      res.status(200).json({
+        route_name: req.body.route.route_name,
+        route_id: req.body.route.id,
+        route_name: req.body.route.route_name,
+        picture_url: req.body.route.picture_url,
+        climb_type: req.body.route.climb_type,
+        climb_grade: req.body.route.climb_grade,
+        rating: req.body.route.rating,
+        description: req.body.route.description,
+        message: 'No reviews have been submitted for this climb yet!'
+      })
     }
   })
 })

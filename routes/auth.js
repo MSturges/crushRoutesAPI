@@ -16,7 +16,7 @@ router.post('/signup', function (req, res, next) {
     })
     .returning('*')
     .then(function(user){
-      var userObj = {id: user[0].id, name: user[0].user_name};
+      var userObj = {id: user[0].id, username: user[0].user_name};
       var token = jwt.sign({ id: user[0].id}, process.env.SECRET);
       res.status(200).json({token: token, user: userObj});
     })
@@ -54,7 +54,17 @@ router.post('/checkTokenValidity', function(req, res, next) {
   try {
     const decoded = jwt.verify(req.body.token, process.env.SECRET);
     if (decoded.id === JSON.parse(req.body.user).id) {
-      res.status(200).json({ success: decoded });
+      knex('users')
+      .where({
+        id: decoded.id
+      })
+      .then(function(user){
+        if (user.length > 0) {
+          res.status(200).json({ success: decoded });
+        } else {
+          throw Error('Token doesn\'t match user');
+        }
+      })
     } else {
       throw Error('Token doesn\'t match user');
     }
