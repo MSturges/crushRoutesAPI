@@ -83,7 +83,30 @@
       return deferred.promise;
     }
 
-
+    this.submitReview = function(formData, routeId) {
+      var deferred = $q.defer();
+      PermissionService.checkTokenValidity()
+      .then(function(result){
+        if (result) {
+          $http.post('/submitReview', {
+            formData: formData,
+            routeId: routeId,
+            user_id: JSON.parse($window.localStorage.getItem('user')).id
+          })
+          .then(function (response){
+            if (response.data.error) {
+              deferred.reject(response.data.error);
+            } else {
+              deferred.resolve(response);
+            }
+          })
+        }
+      })
+      .catch(function(err) {
+        deferred.reject(err);
+      })
+      return deferred.promise;
+    }
 
   }
 }())

@@ -12,11 +12,11 @@ router.post('/grabUserProfile', function(req, res, next){
   .first()
   .then(function(user){
     res.status(200).json({
-      user: user.user_name,
-      home: user.home_town,
-      about: user.about,
-      email: user.email,
-      picture: user.picture_url
+      user: user.user_name ,
+      home: user.home_town || 'n/a',
+      about: user.about || 'n/a',
+      email: user.email || 'n/a',
+      picture: user.picture_url || 'n/a'
     });
   })
   .catch(function(err){

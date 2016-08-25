@@ -65,10 +65,6 @@ router.get('/listClimbing', function(req, res, next){
   });
 });
 
-
-
-
-
 router.get('/allmarkers', function(req, res, next) {
   knex('routes')
   .then(function(markers){
@@ -129,7 +125,6 @@ router.get('/allmarkers', function(req, res, next) {
   });
 });
 
-
 router.post('/grabRoutes', function(req, res, next){
   knex('routes')
   .where({climbing_area: req.body.climbing_area.toLowerCase()})
@@ -143,7 +138,6 @@ router.post('/grabRoutes', function(req, res, next){
 
 router.post('/addMarker', function(req, res, next) {
   if (req.body.markerObj.climbing_area && req.body.markerObj.lat && req.body.markerObj.lng && req.body.markerObj.description && req.body.user_id) {
-    console.log('this is api req.body in the if', req.body);
     knex('routes')
     .insert({
       creator_id: req.body.user_id,
@@ -171,8 +165,57 @@ router.post('/grabRouteReviews', function(req,res,next) {
   .innerJoin('reviews', 'routes.id', 'reviews.route_id')
   .where({ route_id: req.body.route.id })
   .then(function(joinedArr) {
-    res.status(200).json(joinedArr)
+    if (joinedArr.length > 0) {
+      knex('users')
+      .then(function(users) {
+        var enhancedReviews = joinedArr.reduce(function(finalArr, currReview) {
+          users.forEach(function(currUser) {
+            if(currReview.creator_id === currUser.id){
+              finalArr.push({
+                username: currUser.user_name,
+                user_photo: currUser.picture_url || 'http://www.engraversnetwork.com/files/placeholder.jpg',
+                review: currReview.comment,
+                created_at: currReview.created_at
+              })
+            }
+          })
+          return finalArr;
+        }, []);
+
+        res.status(200).json({
+          reviews: enhancedReviews,
+          route_id: req.body.route.id,
+          route_name: req.body.route.route_name,
+          picture_url: req.body.route.picture_url,
+          climb_type: req.body.route.climb_type,
+          climb_grade: req.body.route.climb_grade,
+          rating: req.body.route.rating,
+          description: req.body.route.description
+        })
+      })
+
+    } else {
+      res.status(200).json({route_name: req.body.route.route_name, message: 'No reviews have been submitted for this climb yet!'})
+    }
   })
 })
+
+router.post('/submitReview', function(req, res, next){
+  knex('reviews')
+  .where({ id: req.body.routeId })
+  .first()
+  .insert({
+    creator_id: req.body.user_id,
+    route_id: req.body.routeId,
+    comment: req.body.formData.content
+  })
+  .then(function(review){
+    res.status(200).json({success: 'Success'});
+  })
+  .catch(function(err){
+    res.status(500).json(err);
+  })
+})
+
 
 module.exports = router

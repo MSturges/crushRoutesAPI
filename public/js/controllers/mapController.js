@@ -163,7 +163,6 @@
       return visible ? 'shownMap' : 'hiddenMap';
     }
 
-    // display map if state is 'home'
     $scope.showMap = true;
     $scope.checkRoute = function() {
       if ($rootScope.currentNavItem === 'home') {
@@ -185,22 +184,68 @@
       })
     }, 500);
 
+    function openRoutes() {
+      $mdDialog.show(
+        $mdDialog.alert({
+          controller: mdDialogCtrl,
+          templateUrl: '../../templates/modal_templates/routes_template.html',
+          locals:{currentModalItem: $scope.currentModalItem}
+        })
+        .clickOutsideToClose(true)
+        .escapeToClose(true)
+      ).finally(function(){
+        var body = document.body;
+        body.style.overflow = 'scroll';
+        info.style.display = 'block';
+      });
+    }
 
+    var tabs = [
+      { title: 'All Routes', mainTab: true}
+    ]
 
     $scope.currentModalItem;
 
     var mdDialogCtrl = function ($scope, currentModalItem) {
       $scope.currentModalItem = currentModalItem;
-      $scope.currentRoute = {};
+      $scope.tabs = tabs;
+      $scope.selectedIndex = 0;
       $scope.isLockedOpen = function() {
         console.log('CALLED OPEN');
       }
 
-      $scope.openSingleRouteModal = function(route) {
-        console.log('ROUTE!!!', route);
+      $scope.submitReview = function(formData, routeId) {
+        MapService.submitReview(formData, routeId)
+        .then(function(sucess){
+        })
+        .catch(function(err) {
+        })
+      }
+
+
+
+      $scope.checkTabs = function(tab) {
+        if (tab.mainTab) {
+          $scope.tabs = [$scope.tabs[0]];
+        }
+      }
+
+      $scope.openSingleRouteTab = function(route) {
+        $scope.tabs = [$scope.tabs[0]];
         MapService.grabRouteReviews(route)
         .then(function(success) {
-          $scope.currentRoute.reviews = success.data
+          $scope.tabs.push({
+            route_id: success.data.route_id,
+            title: success.data.route_name,
+            reviews: success.data.reviews,
+            picture_url: success.data.picture_url,
+            climb_type: success.data.climb_type,
+            climb_grade: success.data.climb_grade,
+            rating: success.data.rating,
+            description: success.data.description,
+            reviewTab: true
+          })
+          $scope.selectedIndex = 1;
         })
         .catch(function(err) {
           console.log('ERROR IN OPEN SINGLE ROUTE MODAL', err);
@@ -220,26 +265,13 @@
       MapService.grabRoutes($scope.currentModalItem.climbing_area)
       .then(function(res){
         $scope.currentModalItem.routesForArea = res.data;
-        console.log('IN THEN!!!', $scope.currentModalItem);
       })
       .catch(function(err){
         console.log(err);
       })
-      $mdDialog.show(
-        $mdDialog.alert({
-          controller: mdDialogCtrl,
-          templateUrl: '../../templates/modal_templates/routes_template.html',
-          locals:{currentModalItem: $scope.currentModalItem}
-        })
-        .clickOutsideToClose(true)
-        .escapeToClose(true)
-        .openFrom('#left')
-        .closeTo(angular.element(document.querySelector('#left')))
-      ).finally(function(){
-        var body = document.body;
-        body.style.overflow = 'scroll';
-        info.style.display = 'block';
-      });
+
+      openRoutes();
+
     };
 
   }

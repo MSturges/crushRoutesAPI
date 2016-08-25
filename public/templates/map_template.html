@@ -96,7 +96,7 @@
 
   <div id="routeList">
     <md-subheader id="locationHeader" class="md-no-sticky">Climbing Areas</md-subheader>
-    <md-list-item id="left" class="md-3-line" ng-repeat="item in getShitDone" ng-click="openFromLeft(item)">
+    <md-list-item  class="md-3-line" ng-repeat="item in getShitDone" ng-click="openFromLeft(item)">
       <img ng-src="{{item.url}}?{{$index}}" class="md-avatar" alt="{{item.who}}">
       <div class="md-list-item-text" layout="column">
         <h3>Climbing Area: {{ item.climbing_area }}</h3>

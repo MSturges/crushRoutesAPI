@@ -13,7 +13,6 @@
   ];
 
   function ProfileService ($log, $q, $http, $window, PermissionService) {
-
     this.getUserProfile = function() {
       var deferred = $q.defer();
       PermissionService.checkTokenValidity()

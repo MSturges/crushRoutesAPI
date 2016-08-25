@@ -1,19 +1,47 @@
-<div class="routes_template" >
+<div class="routes_template routeTabsContainer">
+  <md-tabs md-selected="selectedIndex">
+    <md-tab ng-repeat='tab in tabs track by $index' class='routeTab' ng-click='checkTabs(tab)' label='{{tab.title}}'>
 
-  <md-subheader id="modalHeader" class="md-no-sticky"> <span class="modalHeaderSpanOne">Climbing Routes for:</span><span class="modalHeaderSpanTwo"> {{currentModalItem.routesForArea.routes[0].climbing_area}}</span></md-subheader>
-  <md-list-item id="left" class="md-3-line modal-list-item" ng-repeat="item in currentModalItem.routesForArea.routes" ng-click="openSingleRouteModal(item)">
-    <img ng-src="{{item.picture_url}}?{{$index}}" class="md-avatar" alt="{{item.who}}">
+      <md-list-item ng-if='tab.mainTab' class="md-3-line modal-list-item" ng-repeat="item in currentModalItem.routesForArea.routes" ng-click="openSingleRouteTab(item)">
+        <img ng-src="{{item.picture_url}}?{{$index}}" class="md-avatar" alt="{{item.who}}">
+        <div class="md-list-item-text" layout="column" layout-align="center start">
+          <h4>Route: {{ item.route_name }}</h4>
+          <h4>Climbing type: {{ item.climb_type }}</h4>
+          <h4>Climbing grade: {{ item.climb_grade }}</h4>
+          <p class="modal-list-description">Description: {{ item.description }}</p>
+        </div>
+      </md-list-item>
 
-    <div class="md-list-item-text" layout="column" layout-align="center start">
-      <h4>Route: {{ item.route_name }}</h4>
-      <h4>Climbing type: {{ item.climb_type }}</h4>
-      <h4>Climbing grade: {{ item.climb_grade }}</h4>
-    </div>
+      <md-list-item ng-if='tab.reviewTab' class="md-3-line modal-list-item">
+        <img ng-src="{{tab.picture_url}}" class="md-avatar" alt="{{tab.title}}">
+        <div class="md-list-item-text" layout="column" layout-align="center start">
+          <h4>Route: {{ tab.title }}</h4>
+          <h4>Climbing type: {{ tab.climb_type }}</h4>
+          <h4>Climbing grade: {{ tab.climb_grade }}</h4>
+          <p class="modal-list-description">Description: {{ tab.description }}</p>
+        </div>
+      </md-list-item>
 
-    <p class="modal-list-description"> {{ item.description }}</p>
+      <div class='reviewItem' ng-if='tab.reviewTab' ng-repeat='review in tab.reviews'>
+        <img class='reviewUserPhoto' ng-src="{{review.user_photo}}" alt="{{review.username}}">
+        <div class="reviewContent">
+          <div class='reviewContentBlock'>
+            <!-- <h4>Reviewer</h4> -->
+            <p class='reviewText'>User: {{review.username}} </p>
+            <br>
+            <p class='reviewText'> Review: {{review.review}}</p>
+          </div>
+        </div>
+      </div>
 
-  </md-list-item>
-  <md-divider></md-divider>
+      <div id="submitReview" ng-if='tab.reviewTab' class="addReviewContainer">
+        <h1>Leave a Review!</h1>
+        <form class="" ng-submit='submitReview(newReview, tab.route_id)'>
+          <input class="textField" type="text" ng-model='newReview.content'>
+          <input class="submitBtn" type="submit" value='Submit Review'>
+        </form>
+      </div>
 
-
+    </md-tab>
+  </md-tabs>
 </div>

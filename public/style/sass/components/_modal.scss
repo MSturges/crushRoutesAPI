@@ -1,49 +1,11 @@
 .routes_template {
   height: 420px;
-  width: 1000px;
+  width: 100%;
   overflow: scroll;
-  // color: rgba(0, 0, 0, .5) !important;
   color: white !important;
   border: 3px solid rgb(233,174,64);
   background: black;
-  // ._md-list-item-inner {
-  //   color: rgb(233,174,64);
-  //   div {
-  //     width: 0 !important;
-  //   }
-  //
-  //   p {
-  //     text-align: left;
-  //     word-break: break-all;
-  //   //   word-wrap: break-word;
-  //   }
-  //
-  //
-  // }
-
 }
-// .routeContainer {
-//   height: 100px;
-// }
-//
-// .routeInfoContainer {
-//   display: inline-block;
-//   position: relative;
-//   height: 100%;
-// }
-// .descriptionContainer {
-//   display: inline-block;
-//   position: relative;
-//   height: 100%;
-//   padding: 0;
-//   width: 0;
-//   * {
-//     padding: 0;
-//     width: 0;
-//   }
-// }
-
-
 
 .modalImage {
   height: 300px;
@@ -65,7 +27,7 @@
   color: black;
   font-size: 25px;
   font-weight: bold;
-  // text-decoration: underline;
+
   .modalHeaderSpanOne{
     border-bottom: 2px solid black !important;
   }
@@ -77,9 +39,75 @@
 
 }
 
+.routeTabsContainer {
+  min-width: 1000px;
+  md-tabs {
+    height: 100%;
+  }
+  md-tabs md-tabs-wrapper {
+    background: rgb(233,174,64);
+    color: black;
+    height: 50px;
+    span {
+      color: black;
+    }
+    md-ink-bar {
+      background: black !important;
+    }
+  }
+  .reviewItem {
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 1px solid rgb(233,174,64);
+    border-radius: 25px;
+    padding: 20px;
+    padding-left: 15px;
+    .reviewContent {
+      display: inline-block;
+      .reviewContentBlock {
+        display: inline-block;
 
-// .modal-list-description {
-//   // text-align: left !important;
-//   margin-left: 0 !important;
-//   padding-left: 0 !important
-// }
+      }
+      .reviewText {
+        color: rgb(233,174,64);
+        display: inline;
+      }
+    }
+    .reviewUserPhoto {
+      border-radius: 50%;
+      height: 40px;
+      width: 40px;
+    }
+  }
+
+  #submitReview{
+    color: white;
+    height: 100px;
+    width: 90%;
+    margin: auto;
+    text-align: center;
+    padding-bottom: 20px !important;
+
+    h1{
+      text-align: center;
+      width: 100%;
+    }
+
+    .textField {
+      color: black;
+      width: 100%;
+      height: 100px;
+      margin-bottom: 20px;
+    }
+    .submitBtn {
+      color: black;
+      text-align: center;
+      width: 20%;
+      float: right;
+      margin-bottom: 20px;
+    }
+
+  }
+}
