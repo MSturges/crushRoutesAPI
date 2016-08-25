@@ -110,7 +110,7 @@
         }
       })
       .catch(function(err) {
-        console.log('in reject', err);
+        alert('You must be logged in to submit a review!')
         deferred.reject(err);
       })
       return deferred.promise;
