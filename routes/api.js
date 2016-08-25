@@ -201,6 +201,9 @@ router.post('/grabRouteReviews', function(req,res,next) {
 })
 
 router.post('/submitReview', function(req, res, next){
+  console.log('***************************');
+  console.log('REQBODY', req.body);
+  console.log('***************************');
   knex('reviews')
   .where({ id: req.body.routeId })
   .first()
