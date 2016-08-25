@@ -84,6 +84,7 @@
     }
 
     this.submitReview = function(formData, routeId) {
+      console.log('ROUTE ID', routeId, 'formDATA', formData);
       var deferred = $q.defer();
       PermissionService.checkTokenValidity()
       .then(function(result){
