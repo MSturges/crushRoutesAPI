@@ -50,10 +50,14 @@
       </div>
 
       <div class='reviewItem' ng-if='tab.reviewTab' ng-repeat='review in tab.reviews'>
-        <p class='reviewText'>User: {{review.username}} </p>
         <img class='reviewUserPhoto' ng-src="{{review.user_photo}}" alt="{{review.username}}">
         <div class="reviewContent">
-          <p class='reviewText'> Review: {{review.review}}</p>
+          <div class='reviewContentBlock'>
+            <p class='reviewText'>User: {{review.username}} </p>
+            <br>
+
+            <p class='reviewText'> Review: {{review.review}}</p>
+          </div>
         </div>
       </div>
 

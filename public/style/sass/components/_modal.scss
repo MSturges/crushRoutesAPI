@@ -39,181 +39,184 @@
 
 
 
-  .modalOne:first-child {
-    margin-top: 20px !important;
-  }
+.modalOne:first-child {
+  margin-top: 20px !important;
+}
 
-  .modalOne:nth-child(odd) {
-    color: rgb(233,174,64);
-    background: rgb(212, 212, 212)!important;
-    color: black;
-    border-radius: 10px;
-    width: 90%;
-    margin: 0 auto;
-    height: 60px;
-  }
+.modalOne:nth-child(odd) {
+  color: rgb(233,174,64);
+  background: rgb(212, 212, 212)!important;
+  color: black;
+  border-radius: 10px;
+  width: 90%;
+  margin: 0 auto;
+  height: 60px;
+}
 
-  .modalOne:nth-child(even) {
-    color: rgb(233,174,64);
-    background: rgb(255, 255, 255)!important;
-    color: black;
-    border-radius: 10px;
-    width: 90%;
-    margin: 0 auto;
-    height: 60px;
-    margin-top: 1px;
-    margin-bottom: 1px;
-  }
+.modalOne:nth-child(even) {
+  color: rgb(233,174,64);
+  background: rgb(255, 255, 255)!important;
+  color: black;
+  border-radius: 10px;
+  width: 90%;
+  margin: 0 auto;
+  height: 60px;
+  margin-top: 1px;
+  margin-bottom: 1px;
+}
 
-  .modalOne:nth-last-child(){
-    margin-bottom: 30px !important;
-  }
+.modalOne:nth-last-child(){
+  margin-bottom: 30px !important;
+}
 
 
 
-  #routeHead {
-    width: 90%;
-    margin: 0 auto;
-    margin-top: 25px;
-    margin-bottom: 20px;
-    display: block;
-    height: 40px;
-    background: rgb(233,174,64) !important;
-    color: black;
-    border-radius: 20px;
-    div {
-      h4 {
-        width: 50%;
-        margin-left: 20px;
-        float: left;
-      }
+#routeHead {
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 25px;
+  margin-bottom: 20px;
+  display: block;
+  height: 40px;
+  background: rgb(233,174,64) !important;
+  color: black;
+  border-radius: 20px;
+  div {
+    h4 {
+      width: 50%;
+      margin-left: 20px;
+      float: left;
     }
   }
+}
 
 
 
-  .route  {
-    margin-top: 20px !important;
-    margin-bottom: 5px !important;
-    background: rgb(115, 199, 212)!important;
-    color: black;
-    border-radius: 10px;
-    width: 90%;
-    margin: 0 auto;
-    height: 60px;
-    img {
-      margin-top: 25px !important;
+.route  {
+  margin-top: 20px !important;
+  margin-bottom: 5px !important;
+  background: rgb(115, 199, 212)!important;
+  color: black;
+  border-radius: 10px;
+  width: 90%;
+  margin: 0 auto;
+  height: 60px;
+  img {
+    margin-top: 25px !important;
+  }
+}
+
+#reviewHead {
+  width: 90%;
+  margin: 0 auto;
+  margin-bottom: 25px;
+  display: block;
+  height: 40px;
+  background: rgb(233,174,64) !important;
+  color: black;
+  border-radius: 20px;
+  div {
+    h4 {
+      width: 20%;
+      margin-left: 20px;
+      float: left;
     }
   }
+}
 
-  #reviewHead {
-    width: 90%;
+.commentBtn {
+  background: white;
+  color: black;
+  width: 90%;
+  margin: 0 auto;
+  margin-left: 5%;
+  margin-bottom: 5px;
+  border-radius: 15px;
+}
+
+#submitReview {
+  color: white;
+  height: 60px;
+  width: 90%;
+  margin: auto;
+  margin-bottom: 50px;
+  text-align: center;
+  padding-bottom: 20px !important;
+
+
+  .reviewForm {
     margin: 0 auto;
-    margin-bottom: 25px;
-    display: block;
-    height: 40px;
-    background: rgb(233,174,64) !important;
-    color: black;
-    border-radius: 20px;
-    div {
-      h4 {
-        width: 20%;
-        margin-left: 20px;
-        float: left;
-      }
-    }
-  }
+    md-input-container {
+      background: white !important;
+      width: 100%;
+      height: 33px;
+      border-radius: 15px;
 
-  .commentBtn {
-    background: white;
-    color: black;
-    width: 90%;
-    margin: 0 auto;
-    margin-left: 5%;
-    margin-bottom: 5px;
-    border-radius: 15px;
-  }
-
-  #submitReview {
-    color: white;
-    height: 60px;
-    width: 90%;
-    margin: auto;
-    margin-bottom: 50px;
-    text-align: center;
-    padding-bottom: 20px !important;
-
-
-    .reviewForm {
-      margin: 0 auto;
-      md-input-container {
-        background: white !important;
-        width: 100%;
-        height: 33px;
-        border-radius: 15px;
-
-        .textField {
-          color: black;
-          width: 100%;
-        }
-      }
-      .submitBtn {
-        border-radius: 15px;
+      .textField {
         color: black;
-        text-align: center;
-        width: 20%;
-        float: right;
-        margin-bottom: 20px;
+        width: 100%;
       }
     }
-  }
-
-
-  .reviewItem:nth-child(odd) {
-    background: rgb(212, 212, 212)!important;
-    color: black;
-    border-radius: 10px;
-    width: 90%;
-    margin: 0 auto;
-    margin-top: 2px;
-    margin-bottom: 2px;
-    height: 60px;
-
-
-    .reviewUserPhoto {
-      border-radius: 50%;
-      height: 40px;
-      width: 40px;
-      margin-left: 10px;
-    }
-    .reviewText {
-      vertical-align: middle;
-      display: inline;
-    }
-
-    .reviewContent {
-      border: 1px solid red; 
-    }
-  }
-
-
-  .reviewItem:nth-child(even) {
-    background: rgb(255, 255, 255)!important;
-    color: black;
-    border-radius: 10px;
-    width: 90%;
-    margin: 0 auto;
-    height: 60px;
-
-    .reviewUserPhoto {
-      border-radius: 50%;
-      height: 40px;
-      width: 40px;
-      margin-left: 10px;
-    }
-    .reviewText {
-      margin-top: 10px !important;
+    .submitBtn {
+      border-radius: 15px;
       color: black;
-      display: inline;
+      text-align: center;
+      width: 20%;
+      float: right;
+      margin-bottom: 20px;
     }
   }
+}
+
+
+.reviewItem:nth-child(odd) {
+  background: rgb(212, 212, 212)!important;
+  color: black;
+  border-radius: 10px;
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 2px;
+  margin-bottom: 2px;
+  height: 60px;
+
+
+  .reviewUserPhoto {
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    margin-top: 10px;
+    margin-left: 10px;
+    float: left;
+  }
+  .reviewText {
+    vertical-align: middle;
+    display: inline;
+  }
+
+
+
+}
+
+
+.reviewItem:nth-child(even) {
+  background: rgb(255, 255, 255)!important;
+  color: black;
+  border-radius: 10px;
+  width: 90%;
+  margin: 0 auto;
+  height: 60px;
+
+  .reviewUserPhoto {
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    margin-top: 10px;
+    margin-left: 10px;
+    float: left;
+  }
+  .reviewText {
+    margin-top: 10px !important;
+    color: black;
+    display: inline;
+  }
+}
