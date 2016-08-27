@@ -29,28 +29,25 @@
         </div>
       </md-list-item>
 
-
-
-      <div class="" ng-if='tab.mainTab != true'>
-        <button class="commentBtn" ng-click="isReplyFormOpen = !isReplyFormOpen"  type="button" name="button">Leave Review</button>
+      <div ng-if='tab.mainTab != true'>
+        <button class="commentBtn" ng-click="isReplyFormOpen = !isReplyFormOpen"  type="button" name="button">Write Review</button>
         <div id="submitReview"  ng-init="isReplyFormOpen = false" ng-show="isReplyFormOpen"   class="addReviewContainer">
-          <form class="" ng-submit='submitReview(newReview, tab.route_id)'>
-            <input class="textField" type="text" ng-model='newReview.content'>
+          <form class="reviewForm" ng-submit='submitReview(newReview, tab.route_id)'>
+
+            <md-input-container>
+              <input class="textField" ng-model='newReview.content' md-maxlength="100" rows="5" md-select-on-focus></input>
+            </md-input-container>
             <input class="submitBtn" type="submit" value='Submit Review'>
+
           </form>
         </div>
       </div>
+
       <div id="reviewHead" ng-if='tab.mainTab != true'>
         <div>
           <h4>Route Reviews</h4>
         </div>
       </div>
-
-
-
-
-
-
 
       <div class='reviewItem' ng-if='tab.reviewTab' ng-repeat='review in tab.reviews'>
         <img class='reviewUserPhoto' ng-src="{{review.user_photo}}" alt="{{review.username}}">
