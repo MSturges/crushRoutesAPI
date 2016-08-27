@@ -46,6 +46,10 @@
   margin-bottom: 1px;
 }
 
+.modalOne:nth-child:nth-last-child(){
+  margin-bottom: 30px;
+}
+
 .route  {
   margin-top: 20px !important;
   margin-bottom: 20px !important;
@@ -130,9 +134,11 @@
       color: black;
       display: inline;
     }
-
   }
 
+.reviewItem:nth-last-child(){
+  margin-bottom: 30px;
+}
 
 
   #submitReview{
