@@ -18,52 +18,6 @@
   position: fixed;
 }
 
-
-
-.modalOne:first-child {
-  margin-top: 20px !important;
-}
-
-.modalOne:nth-child(odd) {
-  color: rgb(233,174,64);
-  background: rgb(212, 212, 212)!important;
-  color: black;
-  border-radius: 10px;
-  width: 90%;
-  margin: 0 auto;
-  height: 60px;
-}
-
-.modalOne:nth-child(even) {
-  color: rgb(233,174,64);
-  background: rgb(255, 255, 255)!important;
-  color: black;
-  border-radius: 10px;
-  width: 90%;
-  margin: 0 auto;
-  height: 60px;
-  margin-top: 1px;
-  margin-bottom: 1px;
-}
-
-.modalOne:nth-last-child(){
-  margin-bottom: 30px !important;
-}
-
-.route  {
-  margin-top: 20px !important;
-  margin-bottom: 20px !important;
-  background: rgb(159, 108, 162) !important;
-  color: black;
-  border-radius: 10px;
-  width: 90%;
-  margin: 0 auto;
-  height: 60px;
-  img {
-    margin-top: 25px !important;
-  }
-}
-
 .routeTabsContainer {
   min-width: 100%;
   md-tabs {
@@ -81,6 +35,134 @@
     }
   }
 
+
+
+
+  .modalOne:first-child {
+    margin-top: 20px !important;
+  }
+
+  .modalOne:nth-child(odd) {
+    color: rgb(233,174,64);
+    background: rgb(212, 212, 212)!important;
+    color: black;
+    border-radius: 10px;
+    width: 90%;
+    margin: 0 auto;
+    height: 60px;
+  }
+
+  .modalOne:nth-child(even) {
+    color: rgb(233,174,64);
+    background: rgb(255, 255, 255)!important;
+    color: black;
+    border-radius: 10px;
+    width: 90%;
+    margin: 0 auto;
+    height: 60px;
+    margin-top: 1px;
+    margin-bottom: 1px;
+  }
+
+  .modalOne:nth-last-child(){
+    margin-bottom: 30px !important;
+  }
+
+
+
+  #routeHead {
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 25px;
+    margin-bottom: 20px;
+    display: block;
+    height: 40px;
+    background: rgb(233,174,64) !important;
+    color: black;
+    border-radius: 20px;
+    div {
+      h4 {
+        width: 50%;
+        margin-left: 20px;
+        float: left;
+      }
+    }
+  }
+
+
+
+  .route  {
+    margin-top: 20px !important;
+    margin-bottom: 5px !important;
+    background: rgb(115, 199, 212)!important;
+    color: black;
+    border-radius: 10px;
+    width: 90%;
+    margin: 0 auto;
+    height: 60px;
+    img {
+      margin-top: 25px !important;
+    }
+  }
+
+  #reviewHead {
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 25px;
+    display: block;
+    height: 40px;
+    background: rgb(233,174,64) !important;
+    color: black;
+    border-radius: 20px;
+    div {
+      h4 {
+        width: 20%;
+        margin-left: 20px;
+        float: left;
+      }
+    }
+  }
+
+  .commentBtn {
+    background: white;
+    color: black;
+    width: 90%;
+    margin: 0 auto;
+    margin-left: 5%;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    border-radius: 15px;
+  }
+
+  #submitReview{
+    color: white;
+    height: 60px;
+    width: 90%;
+    margin: auto;
+    margin-bottom: 100px;
+    text-align: center;
+    padding-bottom: 20px !important;
+
+    h1{
+      text-align: center;
+      width: 100%;
+    }
+
+    .textField {
+      color: black;
+      width: 100%;
+      height: 100px;
+      margin-bottom: 20px;
+    }
+    .submitBtn {
+      color: black;
+      text-align: center;
+      width: 20%;
+      float: right;
+      margin-bottom: 20px;
+    }
+
+  }
 
 
   .reviewItem:nth-child(odd) {
@@ -136,37 +218,8 @@
     }
   }
 
-.reviewItem:nth-last-child(){
-  margin-bottom: 30px !important;
-}
-
-
-  #submitReview{
-    color: white;
-    height: 100px;
-    width: 90%;
-    margin: auto;
-    text-align: center;
-    padding-bottom: 20px !important;
-
-    h1{
-      text-align: center;
-      width: 100%;
-    }
-
-    .textField {
-      color: black;
-      width: 100%;
-      height: 100px;
-      margin-bottom: 20px;
-    }
-    .submitBtn {
-      color: black;
-      text-align: center;
-      width: 20%;
-      float: right;
-      margin-bottom: 20px;
-    }
-
+  .reviewItem:nth-last-child(){
+    margin-bottom: 30px !important;
   }
+
 }

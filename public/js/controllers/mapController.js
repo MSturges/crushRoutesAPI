@@ -201,17 +201,29 @@
     }
 
     var tabs = [
-      { title: 'All Routes', mainTab: true}
+      { title: 'Routes', mainTab: true}
     ]
 
     $scope.currentModalItem;
+
+
+
+
+
 
     var mdDialogCtrl = function ($scope, currentModalItem) {
       $scope.currentModalItem = currentModalItem;
       $scope.tabs = tabs;
       $scope.selectedIndex = 0;
+      $scope.leaveComment = false;
+
       $scope.isLockedOpen = function() {
       }
+
+
+
+
+
 
       $scope.submitReview = function(formData, routeId) {
         MapService.submitReview(formData, routeId)
@@ -273,6 +285,8 @@
       openRoutes();
 
     };
+
+
 
   }
 }())

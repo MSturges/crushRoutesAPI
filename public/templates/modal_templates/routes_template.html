@@ -2,6 +2,13 @@
   <md-tabs md-selected="selectedIndex">
     <md-tab ng-repeat='tab in tabs track by $index' class='routeTab' ng-click='checkTabs(tab)' label='{{tab.title}}'>
 
+
+      <div id="routeHead" ng-if='tab.mainTab'>
+        <div>
+          <h4>Routes for Climbing Area: {{currentModalItem.routesForArea.routes[0].climbing_area}}</h4>
+        </div>
+      </div>
+
       <md-list-item ng-if='tab.mainTab' class="md-3-line modal-list-item modalOne" ng-repeat="item in currentModalItem.routesForArea.routes" ng-click="openSingleRouteTab(item)">
         <img ng-src="{{item.picture_url}}?{{$index}}" class="md-avatar" alt="{{item.who}}">
         <div class="md-list-item-text" layout="column" layout-align="center start">
@@ -22,7 +29,28 @@
         </div>
       </md-list-item>
 
-      
+
+
+      <div class="" ng-if='tab.mainTab != true'>
+        <button class="commentBtn" ng-click="isReplyFormOpen = !isReplyFormOpen"  type="button" name="button">Leave Review</button>
+        <div id="submitReview"  ng-init="isReplyFormOpen = false" ng-show="isReplyFormOpen"   class="addReviewContainer">
+          <form class="" ng-submit='submitReview(newReview, tab.route_id)'>
+            <input class="textField" type="text" ng-model='newReview.content'>
+            <input class="submitBtn" type="submit" value='Submit Review'>
+          </form>
+        </div>
+      </div>
+      <div id="reviewHead" ng-if='tab.mainTab != true'>
+        <div>
+          <h4>Route Reviews</h4>
+        </div>
+      </div>
+
+
+
+
+
+
 
       <div class='reviewItem' ng-if='tab.reviewTab' ng-repeat='review in tab.reviews'>
         <img class='reviewUserPhoto' ng-src="{{review.user_photo}}" alt="{{review.username}}">
@@ -36,14 +64,6 @@
       </div>
 
 
-
-      <div id="submitReview" ng-if='tab.reviewTab' class="addReviewContainer">
-        <h1>Leave a Review!</h1>
-        <form class="" ng-submit='submitReview(newReview, tab.route_id)'>
-          <input class="textField" type="text" ng-model='newReview.content'>
-          <input class="submitBtn" type="submit" value='Submit Review'>
-        </form>
-      </div>
 
     </md-tab>
   </md-tabs>
