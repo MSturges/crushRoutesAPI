@@ -28,6 +28,7 @@
   color: black;
   margin-bottom: 20px;
   margin-right: 0px !important;
+  border-radius: 25px;
 }
 
 #controlContainer {
@@ -94,23 +95,35 @@
   visibility: visible;
 }
 
-#locationHeader {
-  background: rgb(233,174,64) !important;
-  color: black;
-  font-size: 25px;
-  font-weight: bold;
-  text-decoration: underline;
-  border-radius: 10px;
-}
-
-.modal-list-item {
-  background: black !important;
-  color: rgb(233,174,64) !important;
-}
 
 #routeList {
   height: auto;
   width: auto;
-  background-color: rgb(0, 0, 0);
-  color: rgb(233,174,64);
+  #locationHeader {
+    background: rgb(233,174,64) !important;
+    color: black;
+    font-size: 25px;
+    font-weight: bold;
+    text-decoration: underline;
+    border-radius: 10px;
+    margin-bottom: 20px;
+  }
+  md-list-item:nth-child(odd) {
+    background: rgb(212, 212, 212)!important;
+    color: black;
+    margin-top: 1px;
+    margin-bottom: 1px;
+    border-radius: 10px;
+    img {
+      border: 1px solid black;
+    }
+  }
+  md-list-item:nth-child(even) {
+    background: rgb(255, 255, 255)!important;
+    color: black;
+    border-radius: 10px;
+    img {
+      border: 1px solid black;
+    }
+  }
 }

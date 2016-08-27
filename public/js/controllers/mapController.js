@@ -211,11 +211,9 @@
       $scope.tabs = tabs;
       $scope.selectedIndex = 0;
       $scope.isLockedOpen = function() {
-        console.log('CALLED OPEN');
       }
 
       $scope.submitReview = function(formData, routeId) {
-        console.log('TEST', formData, routeId);
         MapService.submitReview(formData, routeId)
         .then(function(sucess){
         })

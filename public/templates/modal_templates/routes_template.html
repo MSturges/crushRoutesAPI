@@ -2,7 +2,7 @@
   <md-tabs md-selected="selectedIndex">
     <md-tab ng-repeat='tab in tabs track by $index' class='routeTab' ng-click='checkTabs(tab)' label='{{tab.title}}'>
 
-      <md-list-item ng-if='tab.mainTab' class="md-3-line modal-list-item" ng-repeat="item in currentModalItem.routesForArea.routes" ng-click="openSingleRouteTab(item)">
+      <md-list-item ng-if='tab.mainTab' class="md-3-line modal-list-item modalOne" ng-repeat="item in currentModalItem.routesForArea.routes" ng-click="openSingleRouteTab(item)">
         <img ng-src="{{item.picture_url}}?{{$index}}" class="md-avatar" alt="{{item.who}}">
         <div class="md-list-item-text" layout="column" layout-align="center start">
           <h4>Route: {{ item.route_name }}</h4>
@@ -12,7 +12,7 @@
         </div>
       </md-list-item>
 
-      <md-list-item ng-if='tab.reviewTab' class="md-3-line modal-list-item">
+      <md-list-item ng-if='tab.reviewTab' class="md-3-line modal-list-item route">
         <img ng-src="{{tab.picture_url}}" class="md-avatar" alt="{{tab.title}}">
         <div class="md-list-item-text" layout="column" layout-align="center start">
           <h4>Route: {{ tab.title }}</h4>
@@ -21,6 +21,8 @@
           <p class="modal-list-description">Description: {{ tab.description }}</p>
         </div>
       </md-list-item>
+
+      
 
       <div class='reviewItem' ng-if='tab.reviewTab' ng-repeat='review in tab.reviews'>
         <img class='reviewUserPhoto' ng-src="{{review.user_photo}}" alt="{{review.username}}">
@@ -32,6 +34,8 @@
           </div>
         </div>
       </div>
+
+
 
       <div id="submitReview" ng-if='tab.reviewTab' class="addReviewContainer">
         <h1>Leave a Review!</h1>

@@ -1,20 +1,16 @@
 .routes_template {
   height: 420px;
-  width: 100%;
+  width: 1000px;
   overflow: scroll;
   color: white !important;
   border: 3px solid rgb(233,174,64);
   background: black;
 }
 
-.modalImage {
-  height: 300px;
-  width: 300px;
-}
 
 .md-dialog-container {
   width: 100%;
-  padding-top: 450px;
+  padding-top: 550px;
   height: 100%;
   top: inherit !important;
   bottom: 0px;
@@ -22,25 +18,50 @@
   position: fixed;
 }
 
-#modalHeader {
-  background: rgb(233,174,64) !important;
+
+
+.modalOne:first-child {
+  margin-top: 20px !important;
+}
+
+.modalOne:nth-child(odd) {
+  color: rgb(233,174,64);
+  background: rgb(212, 212, 212)!important;
   color: black;
-  font-size: 25px;
-  font-weight: bold;
+  border-radius: 10px;
+  width: 90%;
+  margin: 0 auto;
+  height: 60px;
+}
 
-  .modalHeaderSpanOne{
-    border-bottom: 2px solid black !important;
+.modalOne:nth-child(even) {
+  color: rgb(233,174,64);
+  background: rgb(255, 255, 255)!important;
+  color: black;
+  border-radius: 10px;
+  width: 90%;
+  margin: 0 auto;
+  height: 60px;
+  margin-top: 1px;
+  margin-bottom: 1px;
+}
+
+.route  {
+  margin-top: 20px !important;
+  margin-bottom: 20px !important;
+  background: rgb(159, 108, 162) !important;
+  color: black;
+  border-radius: 10px;
+  width: 90%;
+  margin: 0 auto;
+  height: 60px;
+  img {
+    margin-top: 25px !important;
   }
-
-  .modalHeaderSpanTwo {
-    padding-left: 10px;
-    border: none;
-  }
-
 }
 
 .routeTabsContainer {
-  min-width: 1000px;
+  min-width: 100%;
   md-tabs {
     height: 100%;
   }
@@ -55,32 +76,64 @@
       background: black !important;
     }
   }
-  .reviewItem {
+
+
+
+  .reviewItem:nth-child(odd) {
+    background: rgb(212, 212, 212)!important;
+    color: black;
+    border-radius: 10px;
     width: 90%;
     margin: 0 auto;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    border: 1px solid rgb(233,174,64);
-    border-radius: 25px;
-    padding: 20px;
-    padding-left: 15px;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    height: 60px;
     .reviewContent {
       display: inline-block;
       .reviewContentBlock {
         display: inline-block;
-
-      }
-      .reviewText {
-        color: rgb(233,174,64);
-        display: inline;
       }
     }
     .reviewUserPhoto {
       border-radius: 50%;
       height: 40px;
       width: 40px;
+      margin-left: 10px;
+    }
+    .reviewText {
+      vertical-align: middle;
+      color: black;
+      display: inline;
     }
   }
+
+  .reviewItem:nth-child(even) {
+    background: rgb(255, 255, 255)!important;
+    color: black;
+    border-radius: 10px;
+    width: 90%;
+    margin: 0 auto;
+    height: 60px;
+    .reviewContent {
+      display: inline-block;
+      .reviewContentBlock {
+        display: inline-block;
+      }
+    }
+    .reviewUserPhoto {
+      border-radius: 50%;
+      height: 40px;
+      width: 40px;
+      margin-left: 10px;
+    }
+    .reviewText {
+      color: black;
+      display: inline;
+    }
+
+  }
+
+
 
   #submitReview{
     color: white;
