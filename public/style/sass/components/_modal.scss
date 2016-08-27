@@ -34,6 +34,7 @@
       background: black !important;
     }
   }
+}
 
 
 
@@ -133,7 +134,7 @@
     border-radius: 15px;
   }
 
-  #submitReview{
+  #submitReview {
     color: white;
     height: 60px;
     width: 90%;
@@ -154,7 +155,6 @@
         .textField {
           color: black;
           width: 100%;
-
         }
       }
       .submitBtn {
@@ -178,12 +178,8 @@
     margin-top: 2px;
     margin-bottom: 2px;
     height: 60px;
-    .reviewContent {
-      display: inline-block;
-      .reviewContentBlock {
-        display: inline-block;
-      }
-    }
+
+
     .reviewUserPhoto {
       border-radius: 50%;
       height: 40px;
@@ -192,10 +188,14 @@
     }
     .reviewText {
       vertical-align: middle;
-      color: black;
       display: inline;
     }
+
+    .reviewContent {
+      border: 1px solid red; 
+    }
   }
+
 
   .reviewItem:nth-child(even) {
     background: rgb(255, 255, 255)!important;
@@ -204,12 +204,7 @@
     width: 90%;
     margin: 0 auto;
     height: 60px;
-    .reviewContent {
-      display: inline-block;
-      .reviewContentBlock {
-        display: inline-block;
-      }
-    }
+
     .reviewUserPhoto {
       border-radius: 50%;
       height: 40px;
@@ -217,13 +212,8 @@
       margin-left: 10px;
     }
     .reviewText {
+      margin-top: 10px !important;
       color: black;
       display: inline;
     }
   }
-
-  .reviewItem:nth-last-child(){
-    margin-bottom: 30px !important;
-  }
-
-}
