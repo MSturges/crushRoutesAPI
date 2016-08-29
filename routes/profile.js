@@ -16,7 +16,7 @@ router.post('/grabUserProfile', function(req, res, next){
       home: user.home_town || 'n/a',
       about: user.about || 'n/a',
       email: user.email || 'n/a',
-      picture: user.picture_url || 'n/a'
+      picture: user.picture_url || 'http://eadb.org/wp-content/uploads/2015/08/profile-placeholder.jpg'
     });
   })
   .catch(function(err){

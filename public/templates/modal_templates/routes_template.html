@@ -19,18 +19,27 @@
         </div>
       </md-list-item>
 
-      <md-list-item ng-if='tab.reviewTab' class="md-3-line modal-list-item route">
-        <img ng-src="{{tab.picture_url}}" class="md-avatar" alt="{{tab.title}}">
-        <div class="md-list-item-text" layout="column" layout-align="center start">
-          <h4>Route: {{ tab.title }}</h4>
-          <h4>Climbing type: {{ tab.climb_type }}</h4>
-          <h4>Climbing grade: {{ tab.climb_grade }}</h4>
-          <p class="modal-list-description">Description: {{ tab.description }}</p>
+
+
+      <div ng-if='tab.reviewTab' class="route container">
+        <div class="rowOne">
+          <h4 class="col-md-12 col-lg-12">Route: {{ tab.title }}</h4>
         </div>
-      </md-list-item>
+        <div class="row">
+          <img class="col-md-6" ng-src="{{tab.picture_url}}"  alt="{{tab.title}}">
+          <div class="routeInfo col-md-6">
+            <p>Climbing type: {{ tab.climb_type }}</p>
+            <p>Climbing grade: {{ tab.climb_grade }}</p>
+            <p>Description:</p>
+            <p>{{ tab.description }}</p>
+          </div>
+        </div>
+      </div>
+
+
 
       <div ng-if='tab.mainTab != true'>
-        <button class="commentBtn" ng-click="isReplyFormOpen = !isReplyFormOpen"  type="button" name="button">Write Review</button>
+        <button class="commentBtn" ng-click="isReplyFormOpen = !isReplyFormOpen"  type="button" name="button">Write A Review</button>
         <div id="submitReview"  ng-init="isReplyFormOpen = false" ng-show="isReplyFormOpen"   class="addReviewContainer">
           <form class="reviewForm" ng-submit='submitReview(newReview, tab.route_id)'>
 
@@ -49,16 +58,25 @@
         </div>
       </div>
 
-      <div class='reviewItem' ng-if='tab.reviewTab' ng-repeat='review in tab.reviews'>
-        <img class='reviewUserPhoto' ng-src="{{review.user_photo}}" alt="{{review.username}}">
-        <div class="reviewContent">
-          <div class='reviewContentBlock'>
-            <p class='reviewText'>User: {{review.username}} </p>
-            <br>
 
-            <p class='reviewText'> Review: {{review.review}}</p>
+
+
+      <div class='reviewItem container' ng-if='tab.reviewTab' ng-repeat='review in tab.reviews'>
+
+
+        <div class="row">
+          <div class="userHead col-md-2 col-lg-2">
+            <img class='reviewUserPhoto' ng-src="{{review.user_photo}}" alt="{{review.username}}">
+            <br>
+            <p class=''>User: {{review.username}} </p>
+          </div>
+
+
+          <div class="col-md-10 col-lg-10 reviewContent">
+              <p class='reviewText'>{{review.review}}</p>
           </div>
         </div>
+
       </div>
 
 

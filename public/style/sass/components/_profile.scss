@@ -8,12 +8,28 @@
   margin-bottom: 40px;
   margin-top: 130px;
 
-  h1 {
-    color: rgb(233,174,64);
-    text-decoration: underline;
-  }
 
-  p {
-    color: rgb(233,174,64);
+  .profileImage {
+    max-width: 300px;
+
+
+  }
+  .profileAbout {
+    margin-left: 20px;
+    border: 1px solid rgb(233,174,64);
+    border-radius: 25px;
+
+
+    h3 {
+      padding: 20px;
+      color: rgb(233,174,64);
+      text-decoration: underline;
+      text-align: left;
+    }
+    p {
+      padding: 20px;
+      color: rgb(233,174,64);
+      text-align: left;
+    }
   }
 }
