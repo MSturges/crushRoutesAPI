@@ -40,17 +40,24 @@
 
       <div ng-if='tab.mainTab != true'>
         <button class="commentBtn" ng-click="isReplyFormOpen = !isReplyFormOpen"  type="button" name="button">Write A Review</button>
-        <div id="submitReview"  ng-init="isReplyFormOpen = false" ng-show="isReplyFormOpen"   class="addReviewContainer">
+        <div id="submitReview"  ng-init="isReplyFormOpen = false" ng-show="isReplyFormOpen" >
+
           <form class="reviewForm" ng-submit='submitReview(newReview, tab.route_id)'>
+            <div class="input-container">
+              <input class="textField" ng-model='newReview.content'></input>
+            </div>
 
-            <md-input-container>
-              <input class="textField" ng-model='newReview.content' md-maxlength="100" rows="5" md-select-on-focus></input>
-            </md-input-container>
             <input class="submitBtn" type="submit" value='Submit Review'>
-
           </form>
         </div>
       </div>
+
+
+
+
+
+
+
 
       <div id="reviewHead" ng-if='tab.mainTab != true'>
         <div>

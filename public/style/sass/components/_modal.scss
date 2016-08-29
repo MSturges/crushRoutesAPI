@@ -168,9 +168,18 @@
   }
 }
 
+
+.reviewForm {
+  margin: 0 auto;
+  background: white !important;
+  color: black !important;
+
+  height: 80px;
+}
+
 #submitReview {
   color: white;
-  height: 60px;
+  height: 100px;
   width: 90%;
   margin: auto;
   margin-bottom: 50px;
@@ -178,12 +187,18 @@
   padding-bottom: 20px !important;
   .reviewForm {
     margin: 0 auto;
-    md-input-container {
+    background: white !important;
+    color: black !important;
+
+    height: 80px;
+
+    .input-container {
       background: white !important;
       width: 100%;
-      height: 33px;
-      border-radius: 15px;
+      height: auto;
       .textField {
+        height: 100px;
+
         color: black;
         width: 100%;
       }
@@ -258,4 +273,9 @@
       display: inline;
     }
   }
+}
+
+
+.reviewItem:last-child {
+  margin-bottom: 25px !important;
 }
