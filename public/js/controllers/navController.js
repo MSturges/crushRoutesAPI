@@ -91,7 +91,6 @@
     };
 
     $scope.addMarker = function(){
-      console.log('these are the values', $scope.values);
       MapService.addMarker($scope.values)
       .then(function(success){
         $scope.values = {};
