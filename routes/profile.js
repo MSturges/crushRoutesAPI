@@ -1,10 +1,9 @@
 require('dotenv').config();
-const express = require('express');
-const router = express.Router();
-const knex = require('../db/knex.js');
-const bcrypt = require('bcrypt');
-const jwt = require('jsonwebtoken');
-
+var express = require('express');
+var router = express.Router();
+var knex = require('../db/knex.js');
+var bcrypt = require('bcrypt');
+var jwt = require('jsonwebtoken');
 
 router.post('/grabUserProfile', function(req, res, next){
   knex('users')
@@ -23,9 +22,5 @@ router.post('/grabUserProfile', function(req, res, next){
     res.status(500).json(err);
   })
 })
-
-
-
-
 
 module.exports = router

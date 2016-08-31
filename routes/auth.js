@@ -1,9 +1,9 @@
 require('dotenv').config();
-const express = require('express');
-const router = express.Router();
-const knex = require('../db/knex.js');
-const bcrypt = require('bcrypt');
-const jwt = require('jsonwebtoken');
+var express = require('express');
+var router = express.Router();
+var knex = require('../db/knex.js');
+var bcrypt = require('bcrypt');
+var jwt = require('jsonwebtoken');
 
 
 router.post('/signup', function (req, res, next) {
@@ -52,7 +52,7 @@ router.post('/login', function(req, res, next) {
 
 router.post('/checkTokenValidity', function(req, res, next) {
   try {
-    const decoded = jwt.verify(req.body.token, process.env.SECRET);
+    var decoded = jwt.verify(req.body.token, process.env.SECRET);
     if (decoded.id === JSON.parse(req.body.user).id) {
       knex('users')
       .where({

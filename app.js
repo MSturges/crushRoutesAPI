@@ -1,43 +1,33 @@
-const express = require('express')
-const path = require('path')
-const favicon = require('serve-favicon')
-const logger = require('morgan')
-const bodyParser = require('body-parser')
-const cors = require('cors')
+var express = require('express')
+var path = require('path')
+var favicon = require('serve-favicon')
+var logger = require('morgan')
+var bodyParser = require('body-parser')
+var cors = require('cors')
 
+var map_routes = require('./routes/map_routes')
+var auth = require('./routes/auth')
+var profile = require('./routes/profile')
 
-const api = require('./routes/api')
-const auth = require('./routes/auth')
-const profile = require('./routes/profile')
-
-const app = express()
+var app = express()
 
 app.use(cors())
-// app.use(favicon(path.join(__dirname, 'public', '/images/favicon.ico')))
 app.use(logger('dev'))
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
-app.use(express.static(path.join(__dirname, 'public')))
 
-app.use('/', api)
+app.use('/', map_routes)
 app.use('/auth', auth)
 app.use('/profile', profile)
 
-
-// There is a special routing method, app.all(), which is not derived from
-// any HTTP method. This method is used for loading middleware functions at a path for all request methods.
-app.all('*', (req,res,next) => {
-  res.sendFile('index.html', { root: __dirname + '/public/' })
-})
-
-app.use((req, res, next) => {
-  var err = new Error('Not Found')
+app.use(function(req, res, next) {
+  var err = new Error('This is an API dumbass, its not for your enjoyment')
   err.status = 404
   next(err)
 })
 
 if (app.get('env') === 'development') {
-  app.use((err, req, res, next) => {
+  app.use(function(err, req, res, next) {
     res.status(err.status || 500)
     res.json({
       message: err.message,
@@ -46,7 +36,7 @@ if (app.get('env') === 'development') {
   })
 }
 
-app.use((err, req, res, next) => {
+app.use(function(err, req, res, next) {
   res.status(err.status || 500)
   res.json({
     message: err.message,
